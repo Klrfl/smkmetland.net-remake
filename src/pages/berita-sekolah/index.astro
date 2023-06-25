@@ -10,6 +10,6 @@ const posts = await res.json();
   <p>Berita sekolah terbaru terupdate terpercaya anjing </p>
 
   <ul>
-    {posts.map(post => <li>{post.title.rendered}</li> )}
+    {posts.map((post) => <li><a href=`berita-sekolah/${post.slug}`>{post.title.rendered}</a></li>)}
   </ul>
 </Layout>
