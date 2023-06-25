@@ -1,0 +1,34 @@
+---
+import Layout from "../../layouts/Layout.astro";
+
+export async function getStaticPaths() {
+  const response = await fetch("https://smkmetland.net/ppdb/wp-json/wp/v2/posts");
+  const posts = await response.json();
+
+  return posts.map((post) => {
+    return {
+      params: { slug: post.slug },
+      props: { post: post },
+    };
+  });
+}
+
+const {slug} = Astro.params;
+
+const res = await fetch(`https://smkmetland.net/ppdb/wp-json/wp/v2/posts?slug=${slug}`)
+const [post] = await res.json();
+console.log(post);
+---
+
+<Layout title={post.title.rendered}>
+  <article>
+    <h1>{post.title.rendered}</h1>
+    <Fragment set:html={post.content.rendered}/>
+  </article>
+</Layout>
+
+<style>
+  article {
+    background: #242424;
+  }
+</style>
