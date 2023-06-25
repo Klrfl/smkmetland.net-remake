@@ -1,0 +1,15 @@
+---
+import Layout from "../../layouts/Layout.astro";
+// import BlogThumb from "../../components/BlogThumb.astro";
+const res = await fetch("https://smkmetland.net/ppdb/wp-json/wp/v2/posts");
+const posts = await res.json();
+---
+
+<Layout>
+  <h1>Berita sekolah</h1>
+  <p>Berita sekolah terbaru terupdate terpercaya anjing </p>
+
+  <ul>
+    {posts.map(post => <li>{post.title.rendered}</li> )}
+  </ul>
+</Layout>
