@@ -1,6 +1,7 @@
 ---
-
 import BaseHead from "../components/BaseHead.astro";
+import NavBar from "../components/NavBar.astro";
+
 const { title, description } = Astro.props;
 ---
 
@@ -9,13 +10,18 @@ const { title, description } = Astro.props;
  <BaseHead title={title} description={description}/>
 	
  <body>
+		<NavBar/>
 		<slot />
 	</body>
 </html>
+
 <style is:global>
 	:root {
 		--accent: 124, 58, 237;
 		--accent-gradient: linear-gradient(45deg, rgb(var(--accent)), #da62c4 30%, white 60%);
+	}
+	body {
+		margin: 0;
 	}
 	html {
 		font-family: system-ui, sans-serif;
