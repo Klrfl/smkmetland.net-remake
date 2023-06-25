@@ -1,8 +1,9 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+import {POSTS_ENDPOINT} from "../../consts";
 
 export async function getStaticPaths() {
-  const response = await fetch("https://smkmetland.net/ppdb/wp-json/wp/v2/posts");
+  const response = await fetch(POSTS_ENDPOINT);
   const posts = await response.json();
 
   return posts.map((post) => {
@@ -15,7 +16,7 @@ export async function getStaticPaths() {
 
 const {slug} = Astro.params;
 
-const res = await fetch(`https://smkmetland.net/ppdb/wp-json/wp/v2/posts?slug=${slug}`)
+const res = await fetch(`${POSTS_ENDPOINT}?slug=${slug}`)
 const [post] = await res.json();
 console.log(post);
 ---
