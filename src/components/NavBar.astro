@@ -1,27 +1,238 @@
 <header>
-  <div class="logo">
-    Your logo here
-  </div>
-  <nav>
+  <section class="logo">
+    <img src="assets/metland-logo.png" alt="logo metland" />
+  </section>
+
+  <nav class="socials" id="secondary-nav">
+    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+    <a href="#"><i class="fa-brands fa-facebook"></i></a>
+    <a href="#"><i class="fa-brands fa-youtube"></i></a>
+    <button id="open-nav"> <i class="fa-solid fa-bars"></i></button>
+  </nav>
+
+  <nav class="main-nav" id="main-nav">
+    <div class="nav-header">
+      <div class="logo"><img src="assets/metland-logo.png" /></div>
+      <button id="close-nav"><i class="fa-solid fa-xmark"></i></button>
+    </div>
     <ul>
-      <li><a href="/berita-sekolah">Berita sekolah</a></li>
-      <li><a href="#">Apa</a></li>
-      <li><a href="#">Apa</a></li>
+      <li>
+        <button>
+          Tentang sekolah
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <ul class="main-nav__sub-menu">
+          <li><a href="#">Visi</a></li>
+          <li><a href="#">Misi</a></li>
+          <li><a href="#">Nilai budaya sekolah</a></li>
+          <li><a href="#">Kampus Cibitung</a></li>
+          <li><a href="#">Blog</a></li>
+        </ul>
+      </li>
+
+      <li>
+        <button>
+          Program Keahlian <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <ul class="main-nav__sub-menu">
+          <li><a href="#">Perhotelan</a></li>
+          <li><a href="#">Akutansi</a></li>
+          <li><a href="#">Tata Boga</a></li>
+          <li><a href="#">Pengembangan Perangkat Lunak dan Gim</a></li>
+          <li><a href="#">Desain Komunikasi Visual</a></li>
+        </ul>
+      </li>
+      <li>
+        <button>Kurikulum <i class="fa-solid fa-chevron-down"></i></button>
+        <ul class="main-nav__sub-menu">
+          <li><a href="#">Kurikulum operasional sekolah</a></li>
+          <li><a href="#">Sarana praktik siswa</a></li>
+          <li><a href="#">Organisasi</a></li>
+          <li><a href="#">Ekstrakurikuler</a></li>
+        </ul>
+      </li>
+
+      <li><a href="#">Berita Sekolah</a></li>
+      <li><a href="#">PPDB</a></li>
+      <li><a href="#">BKK</a></li>
     </ul>
   </nav>
 </header>
 
-<style>
+<style lang="scss">
   header {
+    // background: $accent;
+    // color: $text-color;
+    padding: 1rem 2rem;
+    position: fixed;
+    top: 0;
+    min-width: 100%;
+    user-select: none;
+
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    z-index: 10;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover,
+    button:hover {
+      // color: $text-color-hover;
+    }
+
+    .logo {
+      grid-column: span 6;
+    }
   }
 
-  nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-
+  #secondary-nav {
     display: flex;
+
+    justify-content: flex-end;
+    align-items: center;
+
+    a {
+      padding: 1rem;
+    }
+  }
+
+  #open-nav {
+    margin-left: 1rem;
+  }
+
+  #main-nav {
+    background: #000a;
+    backdrop-filter: blur(0.5rem);
+    position: absolute;
+    inset: 0 0 auto;
+    min-height: 100vh;
+
+    transform: translateY(-100%);
+    transition: transform 200ms ease, visibility 200ms ease;
+
+    &.active {
+      transform: translate(0);
+      visibility: visible;
+    }
+
+    & > ul {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    // including the submenus
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: right;
+    }
+
+    & > ul > li {
+      background: #222;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    li a,
+    li button {
+      padding: 1rem 2rem;
+      display: block;
+      width: 100%;
+    }
+
+    .main-nav__sub-menu {
+      background: #333;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 200ms ease, visibility 200ms ease,
+        opacity 200ms ease;
+      visibility: hidden;
+      opacity: 0;
+
+      &.active {
+        max-height: 25rem;
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  .nav-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+
+    & > * {
+      padding: 1rem 0;
+    }
+  }
+
+  @media screen and (min-width: 60em) {
+    header {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    #secondary-nav {
+      grid-column: span 6;
+    }
+
+    #main-nav {
+      background: transparent;
+      backdrop-filter: none;
+      position: relative;
+      min-height: max-content;
+
+      grid-column: span 12;
+
+      transform: none;
+
+      & > ul {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        gap: unset;
+
+        li {
+          background: transparent;
+        }
+      }
+
+      li a,
+      li button {
+        padding: 1rem;
+      }
+
+      .main-nav__sub-menu {
+        position: fixed;
+        opacity: 0;
+        transform: translateY(3rem);
+
+        &:hover {
+          max-height: 25rem;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+
+    #main-nav button:hover + .main-nav__sub-menu {
+      max-height: 25rem;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .nav-header,
+    #open-nav {
+      display: none;
+    }
   }
 </style>
