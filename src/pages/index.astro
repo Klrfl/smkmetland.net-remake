@@ -1,27 +1,20 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 ---
 
-<Layout title="Welcome to Astro.">
-	<main>
-		<h1>SMK Metland</h1>
-		<p>
-			Gua mau buat ulang <a href="https://smkmetland.net">smkmetland.net</a>.
-			Jelek banget soalnya...
-		</p>
-		<p>
-			Situs ini masih dalam tahap pengembangan, jadi jangan ngomong aneh-aneh
-			dulu yah
-		</p>
-	</main>
-</Layout>
+<MainLayout title="SMK Metland">
+	<h1>SMK Metland</h1>
+	<p>
+		Gua mau buat ulang <a href="https://smkmetland.net">smkmetland.net</a>.
+		Jelek banget soalnya...
+	</p>
+	<p>
+		Situs ini masih dalam tahap pengembangan, jadi jangan ngomong aneh-aneh dulu
+		yah
+	</p>
+</MainLayout>
 
 <style>
-	main {
-		margin: auto;
-		padding: 1.5rem;
-		max-width: 60ch;
-	}
 	h1 {
 		font-size: 3rem;
 		font-weight: 800;
