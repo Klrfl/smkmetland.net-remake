@@ -1,0 +1,6 @@
+---
+const {blogTitle} = Astro.props;
+---
+<li class="blog-thumb">
+  <a href=`/berita-sekolah${await blogTitle}`/>{await blogTitle.rendered}</a>
+</li>
