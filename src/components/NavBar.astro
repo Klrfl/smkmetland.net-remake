@@ -17,31 +17,21 @@
       <button id="close-nav"><i class="fa-solid fa-xmark"></i></button>
     </div>
     <ul>
-      <li>
-        <button>
-          Tentang sekolah
-          <i class="fa-solid fa-chevron-down"></i>
-        </button>
-        <ul class="main-nav__sub-menu">
-          <li><a href="#">Visi</a></li>
-          <li><a href="#">Misi</a></li>
-          <li><a href="#">Nilai budaya sekolah</a></li>
-          <li><a href="#">Kampus Cibitung</a></li>
-          <li><a href="#">Blog</a></li>
-        </ul>
-      </li>
+      <li><a href="/tentang-sekolah">Tentang sekolah</a></li>
 
       <li>
         <button>
           Program Keahlian <i class="fa-solid fa-chevron-down"></i>
         </button>
+
         <ul class="main-nav__sub-menu">
           <li><a href="/program-keahlian/perhotelan">Perhotelan</a></li>
           <li><a href="/program-keahlian/akutansi">Akutansi</a></li>
           <li><a href="/program-keahlian/tb">Tata Boga</a></li>
           <li>
             <a href="/program-keahlian/pplg"
-              >Pengembangan Perangkat Lunak dan Gim</a>
+              >Pengembangan Perangkat Lunak dan Gim</a
+            >
           </li>
           <li><a href="/program-keahlian/dkv">Desain Komunikasi Visual</a></li>
         </ul>
@@ -57,8 +47,8 @@
       </li>
 
       <li><a href="/berita-sekolah">Berita Sekolah</a></li>
-      <li><a href="#">PPDB</a></li>
-      <li><a href="#">BKK</a></li>
+      <li><a href="/ppdb">PPDB</a></li>
+      <li><a href="/bkk">BKK</a></li>
     </ul>
   </nav>
 </header>
@@ -218,9 +208,11 @@
       }
 
       .main-nav__sub-menu {
-        position: fixed;
-        opacity: 0;
+        position: absolute;
+        top: 0;
+        width: max-content;
         transform: translateY(3rem);
+        opacity: 0;
 
         &:hover {
           max-height: 25rem;
