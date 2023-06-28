@@ -1,6 +1,6 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import {POSTS_ENDPOINT} from "../../consts";
+import Layout from "@layouts/Layout.astro";
+import { POSTS_ENDPOINT } from "@src/consts";
 
 export async function getStaticPaths() {
   const response = await fetch(POSTS_ENDPOINT);
@@ -14,16 +14,16 @@ export async function getStaticPaths() {
   });
 }
 
-const {slug} = Astro.params;
+const { slug } = Astro.params;
 
-const res = await fetch(`${POSTS_ENDPOINT}?slug=${slug}`)
+const res = await fetch(`${POSTS_ENDPOINT}?slug=${slug}`);
 const [post] = await res.json();
 ---
 
 <Layout title={post.title.rendered}>
   <article>
     <h1>{post.title.rendered}</h1>
-    <Fragment set:html={post.content.rendered}/>
+    <Fragment set:html={post.content.rendered} />
   </article>
 </Layout>
 
