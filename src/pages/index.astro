@@ -1,39 +1,295 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import Layout from "../layouts/Layout.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
-<MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<h1>SMK Metland</h1>
-	<p>
-		Gua mau buat ulang <a href="https://smkmetland.net">smkmetland.net</a>.
-		Jelek banget soalnya...
-	</p>
-	<p>
-		Situs ini masih dalam tahap pengembangan, jadi jangan ngomong aneh-aneh dulu
-		yah
-	</p>
-</MainLayout>
+<Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<section class="hero">
+		<div class="hero__text">
+			<h1>SMK Metland</h1>
+			<p>
+				Gua mau buat ulang <a href="https://smkmetland.net">smkmetland.net</a>.
+				Jelek banget soalnya...
+			</p>
+			<p>
+				Situs ini masih dalam tahap pengembangan, jadi jangan ngomong aneh-aneh
+				dulu yah
+			</p>
+		</div>
+		<div class="hero__image">
+			<img src="/assets/hero-image.jpeg" alt="" />
+		</div>
+	</section>
 
-<style>
-	h1 {
-		font-size: 3rem;
-		font-weight: 800;
+	<section class="main-section" id="infografi">
+		<div class="main-section__content">
+			<h2>Infografi</h2>
+			<div class="infografi">
+				<div class="infografi__card">
+					<h3><span class="stat">619</span> Siswa</h3>
+					<i class="fa-solid fa-user-friends"></i>
+				</div>
+				<div class="infografi__card">
+					<h3><span class="stat">68</span> Guru</h3>
+					<i class="fa-solid-fa-chalkboard-teacher"></i>
+				</div>
+				<div class="infografi__card">
+					<span class="stat">42</span> Tenaga Pendidikan & Caraka
+					<i class="fa-solid-fa-people-group"></i>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="main-section" id="program-keahlian">
+		<a class="main-section__content">
+			<h2>Program Keahlian</h2>
+			<p>Jangan masuk PPLG ya.</p>
+
+			<a class="jurusan">
+				<a href="#" class="jurusan__card">
+					<p>Perhotelan</p>
+					<i class="fa-solid fa-hotel"></i>
+				</a>
+				<a href="#" class="jurusan__card">
+					<p>Tata Boga</p>
+					<i class="fa-solid fa-cook"></i>
+				</a>
+				<a href="#" class="jurusan__card">
+					<p>PPLG</p>
+					<i class="fa-solid fa-terminal"></i>
+				</a>
+				<a href="#" class="jurusan__card">
+					<p>Akutansi</p>
+					<i class="fa-solid fa-money-bill"></i>
+				</a>
+				<a href="#" class="jurusan__card">
+					<p>DKV</p>
+					<i class="fa-solid fa-camera"></i>
+				</a>
+			</a>
+		</a>
+	</section>
+
+	<section class="main-section" id="kerjasama-industri">
+		<div class="main-section__content">
+			<h2>Kerjasama Industri</h2>
+			<div class="perusahaan">
+				<div class="perusahaan__card">
+					<p>Ceritanya logo</p>
+				</div>
+				<div class="perusahaan__card">
+					<p>Ceritanya logo</p>
+				</div>
+				<div class="perusahaan__card">
+					<p>Ceritanya logo</p>
+				</div>
+				<div class="perusahaan__card">
+					<p>Ceritanya logo</p>
+				</div>
+				<div class="perusahaan__card">
+					<p>Ceritanya logo</p>
+				</div>
+				<div class="perusahaan__card">
+					<p>Ceritanya logo</p>
+				</div>
+				<div class="perusahaan__card">
+					<p>Ceritanya logo</p>
+				</div>
+				<div class="perusahaan__card">
+					<p>Ceritanya logo</p>
+				</div>
+				<div class="perusahaan__card">
+					<p>Ceritanya logo</p>
+				</div>
+				<div class="perusahaan__card">
+					<p>Ceritanya logo</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="main-section" id="berita-sekolah">
+		<div class="main-section__content">
+			<h2>Berita Sekolah</h2>
+
+			<div class="berita">
+				<div class="berita__card">
+					<div class="berita__card-image">
+						<img src="" alt="ceritanya gambar berita" />
+					</div>
+					<div class="berita__card-text">
+						<p>Ini ceritanya berita</p>
+					</div>
+				</div>
+				<div class="berita__card">
+					<div class="berita__card-image">
+						<img src="" alt="ceritanya gambar berita" />
+					</div>
+					<div class="berita__card-text">
+						<p>Ini ceritanya berita</p>
+					</div>
+				</div>
+				<div class="berita__card">
+					<div class="berita__card-image">
+						<img src="" alt="ceritanya gambar berita" />
+					</div>
+					<div class="berita__card-text">
+						<p>Ini ceritanya berita</p>
+					</div>
+				</div>
+				<div class="berita__card">
+					<div class="berita__card-image">
+						<img src="" alt="ceritanya gambar berita" />
+					</div>
+					<div class="berita__card-text">
+						<p>Ini ceritanya berita</p>
+					</div>
+				</div>
+				<div class="berita__card">
+					<div class="berita__card-image">
+						<img src="" alt="ceritanya gambar berita" />
+					</div>
+					<div class="berita__card-text">
+						<p>Ini ceritanya berita</p>
+					</div>
+				</div>
+				<div class="berita__card">
+					<div class="berita__card-image">
+						<img src="" alt="ceritanya gambar berita" />
+					</div>
+					<div class="berita__card-text">
+						<p>Ini ceritanya berita</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</Layout>
+
+<style lang="scss">
+	// @use "../abstracts/" as *;
+
+	.wrapper {
+		max-height: 100vh;
+		overflow-y: auto;
+		perspective: 10px;
+		transform-style: preserve-3d;
+	}
+
+	.hero {
+		min-height: 100vh;
+
+		// transform: translateZ(-20px) translateX(-20px) scale(3);
+		// transform: translateZ(-20px) scale(3);
+		position: relative;
+		z-index: -1;
+
+		display: flex;
+		justify-content: center;
+		align-items: flex-end;
+	}
+
+	.hero__text {
+		background: linear-gradient(to top, #1b1b1baa, #1b1b1b00);
+		backdrop-filter: blur(0.5rem) brightness(0.2);
+		color: #ddd;
 		margin: 0;
+		padding: 2rem;
+		flex-grow: 1;
+
+		p {
+			max-width: 75ch;
+		}
 	}
-	.text-gradient {
-		background-image: var(--accent-gradient);
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		background-size: 400%;
-		background-position: 0%;
+
+	.hero__image {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
-	.instructions {
-		line-height: 1.6;
-		margin: 1rem 0;
-		border: 1px solid rgba(var(--accent), 25%);
-		background-color: white;
-		padding: 1rem;
-		border-radius: 0.4rem;
+
+	#daftar {
+		// background: $accent;
+		padding: 1rem 2rem;
+		border-radius: 2rem;
+
+		&:hover {
+			// background: $accent-hover;
+		}
+	}
+
+	.main-section {
+		background: #1b1b1b;
+		padding: 2rem;
+		color: #ddd;
+
+		h2 {
+			position: relative;
+			width: max-content;
+
+			&::before {
+				content: "";
+				// background: $accent;
+				position: absolute;
+				bottom: -0.4rem;
+				width: calc(100% + 10px);
+				height: 3px;
+			}
+		}
+		&__content {
+			max-width: 105ch;
+			margin: auto;
+		}
+	}
+
+	// .company-container {
+	// 	@include card-container;
+	// }
+
+	.infografi {
+		// @include card-container;
+		&__card {
+			outline: 2px solid #444;
+			// @include card;
+		}
+	}
+
+	.jurusan {
+		// @include card-container;
+
+		&__card {
+			color: inherit;
+			text-decoration: none;
+
+			// @include card;
+			outline: 2px solid #444;
+			min-width: 15ch;
+			aspect-ratio: 1/1;
+			transition: transform 200ms cubic-bezier(0, 1, 0.7, 1.5),
+				outline 200ms ease;
+
+			&:hover {
+				transform: scale(1.1);
+				outline: 2px solid #888;
+			}
+		}
+	}
+
+	.company-logo {
+		// @include card;
+		flex: 1 1 0;
+		background: #232323;
+
+		&:hover {
+			background: #333;
+			cursor: pointer;
+		}
 	}
 </style>
