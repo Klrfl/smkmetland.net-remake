@@ -31,22 +31,22 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 				</div>
 				<div class="infografi__card">
 					<h3><span class="stat">68</span> Guru</h3>
-					<i class="fa-solid-fa-chalkboard-teacher"></i>
+					<i class="fa-solid fa-chalkboard-teacher"></i>
 				</div>
 				<div class="infografi__card">
-					<span class="stat">42</span> Tenaga Pendidikan & Caraka
-					<i class="fa-solid-fa-people-group"></i>
+					<h3><span class="stat">42</span> Tenaga Pendidikan & Caraka</h3>
+					<i class="fa-solid fa-people-group"></i>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<section class="main-section" id="program-keahlian">
-		<a class="main-section__content">
+		<div class="main-section__content">
 			<h2>Program Keahlian</h2>
 			<p>Jangan masuk PPLG ya.</p>
 
-			<a class="jurusan">
+			<div class="jurusan">
 				<a href="#" class="jurusan__card">
 					<p>Perhotelan</p>
 					<i class="fa-solid fa-hotel"></i>
@@ -67,8 +67,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 					<p>DKV</p>
 					<i class="fa-solid fa-camera"></i>
 				</a>
-			</a>
-		</a>
+			</div>
+		</div>
 	</section>
 
 	<section class="main-section" id="kerjasama-industri">
@@ -168,7 +168,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 </Layout>
 
 <style lang="scss">
-	// @use "../abstracts/" as *;
+	@use "../styles/abstracts/" as *;
 
 	.wrapper {
 		max-height: 100vh;
@@ -216,12 +216,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 	}
 
 	#daftar {
-		// background: $accent;
+		background: $accent;
 		padding: 1rem 2rem;
 		border-radius: 2rem;
 
 		&:hover {
-			// background: $accent-hover;
+			background: $accent-hover;
 		}
 	}
 
@@ -236,7 +236,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 			&::before {
 				content: "";
-				// background: $accent;
+				background: $accent;
 				position: absolute;
 				bottom: -0.4rem;
 				width: calc(100% + 10px);
@@ -249,26 +249,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		}
 	}
 
-	// .company-container {
-	// 	@include card-container;
-	// }
-
+	// infografi
 	.infografi {
-		// @include card-container;
+		@include card-container;
 		&__card {
 			outline: 2px solid #444;
-			// @include card;
+			@include card;
 		}
 	}
 
+	// program keahlian
 	.jurusan {
-		// @include card-container;
+		@include card-container;
 
 		&__card {
 			color: inherit;
 			text-decoration: none;
 
-			// @include card;
+			@include card;
 			outline: 2px solid #444;
 			min-width: 15ch;
 			aspect-ratio: 1/1;
@@ -281,15 +279,18 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			}
 		}
 	}
+	// kerjasama industri
+	.perusahaan {
+		@include card-container;
+		&__card {
+			@include card;
+			flex: 1 1 0;
+			background: #232323;
 
-	.company-logo {
-		// @include card;
-		flex: 1 1 0;
-		background: #232323;
-
-		&:hover {
-			background: #333;
-			cursor: pointer;
+			&:hover {
+				background: #333;
+				cursor: pointer;
+			}
 		}
 	}
 </style>
