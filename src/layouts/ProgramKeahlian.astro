@@ -1,22 +1,11 @@
 ---
-import Layout from "@layouts/Layout.astro";
+import MainLayout from "@layouts/MainLayout.astro";
 
 const { title, description } = Astro.props;
 ---
 
-<Layout title={title} description={description}>
-  <main>
-    <article class="artikel-utama artikel-utama--program-keahlian">
-      <slot />
-    </article>
-  </main>
-</Layout>
-
-<style>
-  main {
-    max-width: 75ch;
-  }
-  article {
-    padding: 1.5rem;
-  }
-</style>
+<MainLayout title={title} description={description}>
+  <article class="artikel-utama artikel-utama--program-keahlian">
+    <slot />
+  </article>
+</MainLayout>
