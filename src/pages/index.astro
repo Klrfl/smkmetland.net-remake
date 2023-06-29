@@ -2,15 +2,23 @@
 import Layout from "@layouts/Layout.astro";
 import NavBar from "@src/components/NavBar.astro";
 import Footer from "@src/components/Footer.astro";
+
+import { Image } from "@astrojs/image/components";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
+	<NavBar />
 	<div class="wrapper">
-		<NavBar />
 		<section class="hero">
 			<div class="hero__image">
-				<img src="/assets/hero-image.jpeg" alt="" />
+				<Image
+					src="/assets/hero-image.jpeg"
+					alt="Foto SMK tercintah"
+					format="webp"
+					width="700"
+					aspectRatio=`${3}:${2}`
+				/>
 			</div>
 			<div class="hero__text">
 				<h1>SMK Metland</h1>
@@ -28,16 +36,16 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		<section class="main-section" id="infografi">
 			<div class="main-section__content">
 				<h2>Infografi</h2>
-				<div class="infografi">
-					<div class="infografi__card">
+				<div class="infografi card-container">
+					<div class="infografi__card card">
 						<h3><span class="stat">619</span> Siswa</h3>
 						<i class="fa-solid fa-user-friends"></i>
 					</div>
-					<div class="infografi__card">
+					<div class="infografi__card card">
 						<h3><span class="stat">68</span> Guru</h3>
 						<i class="fa-solid fa-chalkboard-teacher"></i>
 					</div>
-					<div class="infografi__card">
+					<div class="infografi__card card">
 						<h3><span class="stat">42</span> Tenaga Pendidikan & Caraka</h3>
 						<i class="fa-solid fa-people-group"></i>
 					</div>
@@ -50,24 +58,24 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 				<h2>Program Keahlian</h2>
 				<p>Jangan masuk PPLG ya.</p>
 
-				<div class="jurusan">
-					<a href="/program-keahlian/perhotelan" class="jurusan__card">
+				<div class="jurusan card-container">
+					<a href="/program-keahlian/perhotelan" class="jurusan__card card">
 						<p>Perhotelan</p>
 						<i class="fa-solid fa-hotel"></i>
 					</a>
-					<a href="/program-keahlian/tb" class="jurusan__card">
+					<a href="/program-keahlian/tb" class="jurusan__card card">
 						<p>Tata Boga</p>
 						<i class="fa-solid fa-utensils"></i>
 					</a>
-					<a href="/program-keahlian/pplg" class="jurusan__card">
+					<a href="/program-keahlian/pplg" class="jurusan__card card">
 						<p>PPLG</p>
 						<i class="fa-solid fa-terminal"></i>
 					</a>
-					<a href="/program-keahlian/akutansi" class="jurusan__card">
+					<a href="/program-keahlian/akutansi" class="jurusan__card card">
 						<p>Akutansi</p>
 						<i class="fa-solid fa-money-bill"></i>
 					</a>
-					<a href="/program-keahlian/dkv" class="jurusan__card">
+					<a href="/program-keahlian/dkv" class="jurusan__card card">
 						<p>DKV</p>
 						<i class="fa-solid fa-camera"></i>
 					</a>
@@ -78,35 +86,35 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		<section class="main-section" id="kerjasama-industri">
 			<div class="main-section__content">
 				<h2>Kerjasama Industri</h2>
-				<div class="perusahaan">
-					<div class="perusahaan__card">
+				<div class="perusahaan card-container">
+					<div class="perusahaan__card card">
 						<p>Ceritanya logo</p>
 					</div>
-					<div class="perusahaan__card">
+					<div class="perusahaan__card card">
 						<p>Ceritanya logo</p>
 					</div>
-					<div class="perusahaan__card">
+					<div class="perusahaan__card card">
 						<p>Ceritanya logo</p>
 					</div>
-					<div class="perusahaan__card">
+					<div class="perusahaan__card card">
 						<p>Ceritanya logo</p>
 					</div>
-					<div class="perusahaan__card">
+					<div class="perusahaan__card card">
 						<p>Ceritanya logo</p>
 					</div>
-					<div class="perusahaan__card">
+					<div class="perusahaan__card card">
 						<p>Ceritanya logo</p>
 					</div>
-					<div class="perusahaan__card">
+					<div class="perusahaan__card card">
 						<p>Ceritanya logo</p>
 					</div>
-					<div class="perusahaan__card">
+					<div class="perusahaan__card card">
 						<p>Ceritanya logo</p>
 					</div>
-					<div class="perusahaan__card">
+					<div class="perusahaan__card card">
 						<p>Ceritanya logo</p>
 					</div>
-					<div class="perusahaan__card">
+					<div class="perusahaan__card card">
 						<p>Ceritanya logo</p>
 					</div>
 				</div>
@@ -117,8 +125,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			<div class="main-section__content">
 				<h2>Berita Sekolah</h2>
 
-				<div class="berita">
-					<div class="berita__card">
+				<div class="berita card-container">
+					<div class="berita__card card">
 						<div class="berita__card-image">
 							<img src="" alt="ceritanya gambar berita" />
 						</div>
@@ -126,7 +134,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 							<p>Ini ceritanya berita</p>
 						</div>
 					</div>
-					<div class="berita__card">
+					<div class="berita__card card">
 						<div class="berita__card-image">
 							<img src="" alt="ceritanya gambar berita" />
 						</div>
@@ -134,7 +142,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 							<p>Ini ceritanya berita</p>
 						</div>
 					</div>
-					<div class="berita__card">
+					<div class="berita__card card">
 						<div class="berita__card-image">
 							<img src="" alt="ceritanya gambar berita" />
 						</div>
@@ -142,7 +150,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 							<p>Ini ceritanya berita</p>
 						</div>
 					</div>
-					<div class="berita__card">
+					<div class="berita__card card">
 						<div class="berita__card-image">
 							<img src="" alt="ceritanya gambar berita" />
 						</div>
@@ -150,7 +158,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 							<p>Ini ceritanya berita</p>
 						</div>
 					</div>
-					<div class="berita__card">
+					<div class="berita__card card">
 						<div class="berita__card-image">
 							<img src="" alt="ceritanya gambar berita" />
 						</div>
@@ -158,7 +166,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 							<p>Ini ceritanya berita</p>
 						</div>
 					</div>
-					<div class="berita__card">
+					<div class="berita__card card">
 						<div class="berita__card-image">
 							<img src="" alt="ceritanya gambar berita" />
 						</div>
@@ -184,7 +192,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 	}
 
 	.hero {
-		min-height: 100vh;
+		min-height: 90vh;
 		transform-style: preserve-3d;
 		position: relative;
 		z-index: -1;
@@ -211,6 +219,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		inset: 0;
 		transform: translateZ(-10px) scale(2);
 		width: 100vw;
+		height: 100vh;
 
 		img {
 			width: 100%;
@@ -253,55 +262,42 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		}
 	}
 
-	// infografi
-	.infografi {
+	.card-container {
 		@include card-container;
-		&__card {
-			outline: 2px solid #444;
-			@include card;
-		}
+	}
+	.card {
+		@include card;
+	}
+
+	// infografi
+	.infografi__card {
+		outline: 2px solid #444;
 	}
 
 	// program keahlian
-	.jurusan {
-		@include card-container;
+	.jurusan__card {
+		color: inherit;
+		text-decoration: none;
 
-		&__card {
-			color: inherit;
-			text-decoration: none;
+		outline: 2px solid #444;
+		min-width: 15ch;
+		aspect-ratio: 1/1;
+		transition: transform 200ms cubic-bezier(0, 1, 0.7, 1.5), outline 200ms ease;
 
-			@include card;
-			outline: 2px solid #444;
-			min-width: 15ch;
-			aspect-ratio: 1/1;
-			transition: transform 200ms cubic-bezier(0, 1, 0.7, 1.5),
-				outline 200ms ease;
-
-			&:hover {
-				transform: scale(1.1);
-				outline: 2px solid #888;
-			}
+		&:hover {
+			transform: scale(1.1);
+			outline: 2px solid #888;
 		}
 	}
+
 	// kerjasama industri
-	.perusahaan {
-		@include card-container;
-		&__card {
-			@include card;
-			flex: 1 1 0;
-			background: #232323;
+	.perusahaan__card {
+		flex: 1 1 0;
+		background: #232323;
 
-			&:hover {
-				background: #333;
-				cursor: pointer;
-			}
-		}
-	}
-
-	.berita {
-		@include card-container;
-		&__card {
-			@include card;
+		&:hover {
+			background: #333;
+			cursor: pointer;
 		}
 	}
 </style>
