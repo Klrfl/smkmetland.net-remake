@@ -195,10 +195,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 	}
 
 	.hero__text {
-		background: linear-gradient(to top, #1b1b1baa, #1b1b1b00);
-		backdrop-filter: blur(0.5rem) brightness(0.2);
+		background: linear-gradient(to top, #1b1b1b, #1b1b1bcc);
+		backdrop-filter: blur(0.5rem);
 		color: #ddd;
-		margin: 0;
 		padding: 2rem;
 		flex-grow: 1;
 
@@ -210,7 +209,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 	.hero__image {
 		position: absolute;
 		inset: 0;
-		z-index: -1;
 		transform: translateZ(-10px) scale(2);
 		width: 100vw;
 
@@ -297,6 +295,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 				background: #333;
 				cursor: pointer;
 			}
+		}
+	}
+
+	.berita {
+		@include card-container;
+		&__card {
+			@include card;
 		}
 	}
 </style>
