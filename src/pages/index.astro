@@ -1,170 +1,176 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import NavBar from "@src/components/NavBar.astro";
+import Footer from "@src/components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<section class="hero">
-		<div class="hero__text">
-			<h1>SMK Metland</h1>
-			<p>
-				Gua mau buat ulang <a href="https://smkmetland.net">smkmetland.net</a>.
-				Jelek banget soalnya...
-			</p>
-			<p>
-				Situs ini masih dalam tahap pengembangan, jadi jangan ngomong aneh-aneh
-				dulu yah
-			</p>
-		</div>
-		<div class="hero__image">
-			<img src="/assets/hero-image.jpeg" alt="" />
-		</div>
-	</section>
-
-	<section class="main-section" id="infografi">
-		<div class="main-section__content">
-			<h2>Infografi</h2>
-			<div class="infografi">
-				<div class="infografi__card">
-					<h3><span class="stat">619</span> Siswa</h3>
-					<i class="fa-solid fa-user-friends"></i>
-				</div>
-				<div class="infografi__card">
-					<h3><span class="stat">68</span> Guru</h3>
-					<i class="fa-solid fa-chalkboard-teacher"></i>
-				</div>
-				<div class="infografi__card">
-					<h3><span class="stat">42</span> Tenaga Pendidikan & Caraka</h3>
-					<i class="fa-solid fa-people-group"></i>
-				</div>
+	<div class="wrapper">
+		<NavBar />
+		<section class="hero">
+			<div class="hero__text">
+				<h1>SMK Metland</h1>
+				<p>
+					Gua mau buat ulang <a href="https://smkmetland.net">smkmetland.net</a
+					>. Jelek banget soalnya...
+				</p>
+				<p>
+					Situs ini masih dalam tahap pengembangan, jadi jangan ngomong
+					aneh-aneh dulu yah
+				</p>
 			</div>
-		</div>
-	</section>
-
-	<section class="main-section" id="program-keahlian">
-		<div class="main-section__content">
-			<h2>Program Keahlian</h2>
-			<p>Jangan masuk PPLG ya.</p>
-
-			<div class="jurusan">
-				<a href="#" class="jurusan__card">
-					<p>Perhotelan</p>
-					<i class="fa-solid fa-hotel"></i>
-				</a>
-				<a href="#" class="jurusan__card">
-					<p>Tata Boga</p>
-					<i class="fa-solid fa-cook"></i>
-				</a>
-				<a href="#" class="jurusan__card">
-					<p>PPLG</p>
-					<i class="fa-solid fa-terminal"></i>
-				</a>
-				<a href="#" class="jurusan__card">
-					<p>Akutansi</p>
-					<i class="fa-solid fa-money-bill"></i>
-				</a>
-				<a href="#" class="jurusan__card">
-					<p>DKV</p>
-					<i class="fa-solid fa-camera"></i>
-				</a>
+			<div class="hero__image">
+				<img src="/assets/hero-image.jpeg" alt="" />
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<section class="main-section" id="kerjasama-industri">
-		<div class="main-section__content">
-			<h2>Kerjasama Industri</h2>
-			<div class="perusahaan">
-				<div class="perusahaan__card">
-					<p>Ceritanya logo</p>
-				</div>
-				<div class="perusahaan__card">
-					<p>Ceritanya logo</p>
-				</div>
-				<div class="perusahaan__card">
-					<p>Ceritanya logo</p>
-				</div>
-				<div class="perusahaan__card">
-					<p>Ceritanya logo</p>
-				</div>
-				<div class="perusahaan__card">
-					<p>Ceritanya logo</p>
-				</div>
-				<div class="perusahaan__card">
-					<p>Ceritanya logo</p>
-				</div>
-				<div class="perusahaan__card">
-					<p>Ceritanya logo</p>
-				</div>
-				<div class="perusahaan__card">
-					<p>Ceritanya logo</p>
-				</div>
-				<div class="perusahaan__card">
-					<p>Ceritanya logo</p>
-				</div>
-				<div class="perusahaan__card">
-					<p>Ceritanya logo</p>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="main-section" id="berita-sekolah">
-		<div class="main-section__content">
-			<h2>Berita Sekolah</h2>
-
-			<div class="berita">
-				<div class="berita__card">
-					<div class="berita__card-image">
-						<img src="" alt="ceritanya gambar berita" />
+		<section class="main-section" id="infografi">
+			<div class="main-section__content">
+				<h2>Infografi</h2>
+				<div class="infografi">
+					<div class="infografi__card">
+						<h3><span class="stat">619</span> Siswa</h3>
+						<i class="fa-solid fa-user-friends"></i>
 					</div>
-					<div class="berita__card-text">
-						<p>Ini ceritanya berita</p>
+					<div class="infografi__card">
+						<h3><span class="stat">68</span> Guru</h3>
+						<i class="fa-solid fa-chalkboard-teacher"></i>
 					</div>
-				</div>
-				<div class="berita__card">
-					<div class="berita__card-image">
-						<img src="" alt="ceritanya gambar berita" />
-					</div>
-					<div class="berita__card-text">
-						<p>Ini ceritanya berita</p>
-					</div>
-				</div>
-				<div class="berita__card">
-					<div class="berita__card-image">
-						<img src="" alt="ceritanya gambar berita" />
-					</div>
-					<div class="berita__card-text">
-						<p>Ini ceritanya berita</p>
-					</div>
-				</div>
-				<div class="berita__card">
-					<div class="berita__card-image">
-						<img src="" alt="ceritanya gambar berita" />
-					</div>
-					<div class="berita__card-text">
-						<p>Ini ceritanya berita</p>
-					</div>
-				</div>
-				<div class="berita__card">
-					<div class="berita__card-image">
-						<img src="" alt="ceritanya gambar berita" />
-					</div>
-					<div class="berita__card-text">
-						<p>Ini ceritanya berita</p>
-					</div>
-				</div>
-				<div class="berita__card">
-					<div class="berita__card-image">
-						<img src="" alt="ceritanya gambar berita" />
-					</div>
-					<div class="berita__card-text">
-						<p>Ini ceritanya berita</p>
+					<div class="infografi__card">
+						<h3><span class="stat">42</span> Tenaga Pendidikan & Caraka</h3>
+						<i class="fa-solid fa-people-group"></i>
 					</div>
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+
+		<section class="main-section" id="program-keahlian">
+			<div class="main-section__content">
+				<h2>Program Keahlian</h2>
+				<p>Jangan masuk PPLG ya.</p>
+
+				<div class="jurusan">
+					<a href="#" class="jurusan__card">
+						<p>Perhotelan</p>
+						<i class="fa-solid fa-hotel"></i>
+					</a>
+					<a href="#" class="jurusan__card">
+						<p>Tata Boga</p>
+						<i class="fa-solid fa-cook"></i>
+					</a>
+					<a href="#" class="jurusan__card">
+						<p>PPLG</p>
+						<i class="fa-solid fa-terminal"></i>
+					</a>
+					<a href="#" class="jurusan__card">
+						<p>Akutansi</p>
+						<i class="fa-solid fa-money-bill"></i>
+					</a>
+					<a href="#" class="jurusan__card">
+						<p>DKV</p>
+						<i class="fa-solid fa-camera"></i>
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="main-section" id="kerjasama-industri">
+			<div class="main-section__content">
+				<h2>Kerjasama Industri</h2>
+				<div class="perusahaan">
+					<div class="perusahaan__card">
+						<p>Ceritanya logo</p>
+					</div>
+					<div class="perusahaan__card">
+						<p>Ceritanya logo</p>
+					</div>
+					<div class="perusahaan__card">
+						<p>Ceritanya logo</p>
+					</div>
+					<div class="perusahaan__card">
+						<p>Ceritanya logo</p>
+					</div>
+					<div class="perusahaan__card">
+						<p>Ceritanya logo</p>
+					</div>
+					<div class="perusahaan__card">
+						<p>Ceritanya logo</p>
+					</div>
+					<div class="perusahaan__card">
+						<p>Ceritanya logo</p>
+					</div>
+					<div class="perusahaan__card">
+						<p>Ceritanya logo</p>
+					</div>
+					<div class="perusahaan__card">
+						<p>Ceritanya logo</p>
+					</div>
+					<div class="perusahaan__card">
+						<p>Ceritanya logo</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="main-section" id="berita-sekolah">
+			<div class="main-section__content">
+				<h2>Berita Sekolah</h2>
+
+				<div class="berita">
+					<div class="berita__card">
+						<div class="berita__card-image">
+							<img src="" alt="ceritanya gambar berita" />
+						</div>
+						<div class="berita__card-text">
+							<p>Ini ceritanya berita</p>
+						</div>
+					</div>
+					<div class="berita__card">
+						<div class="berita__card-image">
+							<img src="" alt="ceritanya gambar berita" />
+						</div>
+						<div class="berita__card-text">
+							<p>Ini ceritanya berita</p>
+						</div>
+					</div>
+					<div class="berita__card">
+						<div class="berita__card-image">
+							<img src="" alt="ceritanya gambar berita" />
+						</div>
+						<div class="berita__card-text">
+							<p>Ini ceritanya berita</p>
+						</div>
+					</div>
+					<div class="berita__card">
+						<div class="berita__card-image">
+							<img src="" alt="ceritanya gambar berita" />
+						</div>
+						<div class="berita__card-text">
+							<p>Ini ceritanya berita</p>
+						</div>
+					</div>
+					<div class="berita__card">
+						<div class="berita__card-image">
+							<img src="" alt="ceritanya gambar berita" />
+						</div>
+						<div class="berita__card-text">
+							<p>Ini ceritanya berita</p>
+						</div>
+					</div>
+					<div class="berita__card">
+						<div class="berita__card-image">
+							<img src="" alt="ceritanya gambar berita" />
+						</div>
+						<div class="berita__card-text">
+							<p>Ini ceritanya berita</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<Footer />
+	</div>
 </Layout>
 
 <style lang="scss">
@@ -172,16 +178,14 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 	.wrapper {
 		max-height: 100vh;
-		overflow-y: auto;
+		overflow: hidden auto;
 		perspective: 10px;
 		transform-style: preserve-3d;
 	}
 
 	.hero {
 		min-height: 100vh;
-
-		// transform: translateZ(-20px) translateX(-20px) scale(3);
-		// transform: translateZ(-20px) scale(3);
+		transform-style: preserve-3d;
 		position: relative;
 		z-index: -1;
 
@@ -207,6 +211,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 		position: absolute;
 		inset: 0;
 		z-index: -1;
+		transform: translateZ(-10px) scale(2);
+		width: 100vw;
 
 		img {
 			width: 100%;
