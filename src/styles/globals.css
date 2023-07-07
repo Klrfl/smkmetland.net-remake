@@ -1,6 +1,6 @@
 :root {
   color-scheme: light dark;
-  --accent: 124, 58, 237;
+  --accent: #035757;
   --accent-hover: #024141;
 
   --accent-gradient: linear-gradient(
@@ -11,17 +11,21 @@
   );
   --white-dark: #ddd;
   --white: #fefefe;
+  --black: #222;
+  --dark-grey: #333;
+  --grey: #444;
 
+  --hero-gradient: linear-gradient(to top, #1b1b1b, #1b1b1bcc);
   --text-color: var(--white-dark);
   --text-color-hover: var(--white);
+  --outline: var(--grey);
   --main-section-bg: #1b1b1b;
-  --main-section-color: #ddd;
-  --blog-thumb-bg: #333;
-  --blog-thumb-bg-hover: #444;
+  --blog-thumb-bg: var(--dark-grey);
+  --blog-thumb-bg-hover: var(--grey);
 }
 
-html {
-  font-family: system-ui, sans-serif;
+body {
+  color: var(--text-color);
 }
 
 code {
@@ -31,9 +35,11 @@ code {
 
 @media (prefers-color-scheme: light) {
   :root {
-    --main-section-bg: #efefef;
-    --main-section-color: #222;
-    --blog-thumb-bg: #ddd;
-    --blog-thumb-bg-hover: #eee;
+    --hero-gradient: linear-gradient(to top, var(--white), #dededeaa);
+    --text-color: var(--black);
+    --outline: var(--white-dark);
+    --main-section-bg: var(--white);
+    --blog-thumb-bg: var(--white-dark);
+    --blog-thumb-bg-hover: var(--white);
   }
 }
