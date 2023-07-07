@@ -1,6 +1,35 @@
 ---
-const {blogTitle} = Astro.props;
+const { post } = Astro.props;
 ---
-<li class="blog-thumb">
-  <a href=`/berita-sekolah${await blogTitle}`/>{await blogTitle.rendered}</a>
+
+<li class="post">
+  <a href={`berita-sekolah/${post.slug}`}>
+    <h2>{post.title.rendered}</h2>
+    <Fragment set:html={post.excerpt.rendered} />
+  </a>
 </li>
+
+<style>
+  .post + .post {
+    margin-block-start: 1rem;
+  }
+
+  .post > a {
+    background: #eee;
+    color: inherit;
+    text-decoration: none;
+    padding: 2rem;
+    display: inline-block;
+  }
+
+  .post > a:hover {
+    background: #ddd;
+  }
+
+  /* .post p {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  } */
+</style>
