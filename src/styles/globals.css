@@ -1,4 +1,5 @@
 :root {
+  color-scheme: light dark;
   --accent: 124, 58, 237;
   --accent-gradient: linear-gradient(
     45deg,
@@ -6,14 +7,22 @@
     #da62c4 30%,
     white 60%
   );
+  --blog-thumb-bg: #333;
+  --blog-thumb-bg-hover: #444;
 }
 
 html {
   font-family: system-ui, sans-serif;
-  background-color: #f6f6f6;
 }
 
 code {
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --blog-thumb-bg: #ddd;
+    --blog-thumb-bg-hover: #eee;
+  }
 }
