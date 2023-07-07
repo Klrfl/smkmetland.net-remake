@@ -1,10 +1,42 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import NavBar from "@src/components/NavBar.astro";
+import BlogThumb from "@src/components/BlogThumb.astro";
 import Footer from "@src/components/Footer.astro";
 
 import { Image } from "@astrojs/image/components";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import { SITE_TITLE, SITE_DESCRIPTION } from "@src/scripts/consts";
+
+const perusahaanArr = [
+	{
+		nama: "Perusahaan",
+		link: "#",
+	},
+	{
+		nama: "Perusahaan",
+		link: "#",
+	},
+	{
+		nama: "Perusahaan",
+		link: "#",
+	},
+	{
+		nama: "Perusahaan",
+		link: "#",
+	},
+	{
+		nama: "Perusahaan",
+		link: "#",
+	},
+	{
+		nama: "Perusahaan",
+		link: "#",
+	},
+];
+
+import { POSTS_ENDPOINT } from "@src/scripts/consts.js";
+const request = await fetch(POSTS_ENDPOINT);
+const beritaArr = await request.json();
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -15,9 +47,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 				<Image
 					src="/assets/hero-image.jpeg"
 					alt="Foto SMK tercintah"
+					width={700}
+					aspectRatio="3:2"
 					format="webp"
-					width="700"
-					aspectRatio=`${3}:${2}`
 				/>
 			</div>
 			<div class="hero__text">
@@ -87,36 +119,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			<div class="main-section__content">
 				<h2>Kerjasama Industri</h2>
 				<div class="perusahaan card-container">
-					<div class="perusahaan__card card">
-						<p>Ceritanya logo</p>
-					</div>
-					<div class="perusahaan__card card">
-						<p>Ceritanya logo</p>
-					</div>
-					<div class="perusahaan__card card">
-						<p>Ceritanya logo</p>
-					</div>
-					<div class="perusahaan__card card">
-						<p>Ceritanya logo</p>
-					</div>
-					<div class="perusahaan__card card">
-						<p>Ceritanya logo</p>
-					</div>
-					<div class="perusahaan__card card">
-						<p>Ceritanya logo</p>
-					</div>
-					<div class="perusahaan__card card">
-						<p>Ceritanya logo</p>
-					</div>
-					<div class="perusahaan__card card">
-						<p>Ceritanya logo</p>
-					</div>
-					<div class="perusahaan__card card">
-						<p>Ceritanya logo</p>
-					</div>
-					<div class="perusahaan__card card">
-						<p>Ceritanya logo</p>
-					</div>
+					{
+						perusahaanArr.map((perusahaan) => (
+							<div class="perusahaan__card card">
+								<a href={perusahaan.link}>
+									<p>{perusahaan.nama}</p>
+								</a>
+							</div>
+						))
+					}
 				</div>
 			</div>
 		</section>
@@ -126,54 +137,20 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 				<h2>Berita Sekolah</h2>
 
 				<div class="berita card-container">
-					<div class="berita__card card">
+					<ul class="berita-list">
+						{beritaArr.map((berita) => <BlogThumb post={berita} />)}
+					</ul>
+
+					<a href="/berita-sekolah">Lihat lebih banyak</a>
+
+					<!-- <div class="berita__card card">
 						<div class="berita__card-image">
 							<img src="" alt="ceritanya gambar berita" />
 						</div>
 						<div class="berita__card-text">
 							<p>Ini ceritanya berita</p>
 						</div>
-					</div>
-					<div class="berita__card card">
-						<div class="berita__card-image">
-							<img src="" alt="ceritanya gambar berita" />
-						</div>
-						<div class="berita__card-text">
-							<p>Ini ceritanya berita</p>
-						</div>
-					</div>
-					<div class="berita__card card">
-						<div class="berita__card-image">
-							<img src="" alt="ceritanya gambar berita" />
-						</div>
-						<div class="berita__card-text">
-							<p>Ini ceritanya berita</p>
-						</div>
-					</div>
-					<div class="berita__card card">
-						<div class="berita__card-image">
-							<img src="" alt="ceritanya gambar berita" />
-						</div>
-						<div class="berita__card-text">
-							<p>Ini ceritanya berita</p>
-						</div>
-					</div>
-					<div class="berita__card card">
-						<div class="berita__card-image">
-							<img src="" alt="ceritanya gambar berita" />
-						</div>
-						<div class="berita__card-text">
-							<p>Ini ceritanya berita</p>
-						</div>
-					</div>
-					<div class="berita__card card">
-						<div class="berita__card-image">
-							<img src="" alt="ceritanya gambar berita" />
-						</div>
-						<div class="berita__card-text">
-							<p>Ini ceritanya berita</p>
-						</div>
-					</div>
+					</div> -->
 				</div>
 			</div>
 		</section>
@@ -229,19 +206,19 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 	}
 
 	#daftar {
-		background: $accent;
+		background: var(--accent);
 		padding: 1rem 2rem;
 		border-radius: 2rem;
 
 		&:hover {
-			background: $accent-hover;
+			background: var(--accent-hover);
 		}
 	}
 
 	.main-section {
-		background: #1b1b1b;
+		background: var(--main-section-bg);
 		padding: 2rem;
-		color: #ddd;
+		color: var(--main-section-color);
 
 		h2 {
 			position: relative;
@@ -249,7 +226,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
 			&::before {
 				content: "";
-				background: $accent;
+				background: var(--accent);
 				position: absolute;
 				bottom: -0.4rem;
 				width: calc(100% + 10px);
@@ -299,5 +276,15 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 			background: #333;
 			cursor: pointer;
 		}
+	}
+
+	.berita-list {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+		gap: 1rem;
 	}
 </style>

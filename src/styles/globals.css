@@ -1,12 +1,21 @@
 :root {
   color-scheme: light dark;
   --accent: 124, 58, 237;
+  --accent-hover: #024141;
+
   --accent-gradient: linear-gradient(
     45deg,
     rgb(var(--accent)),
     #da62c4 30%,
     white 60%
   );
+  --white-dark: #ddd;
+  --white: #fefefe;
+
+  --text-color: var(--white-dark);
+  --text-color-hover: var(--white);
+  --main-section-bg: #1b1b1b;
+  --main-section-color: #ddd;
   --blog-thumb-bg: #333;
   --blog-thumb-bg-hover: #444;
 }
@@ -22,6 +31,8 @@ code {
 
 @media (prefers-color-scheme: light) {
   :root {
+    --main-section-bg: #efefef;
+    --main-section-color: #222;
     --blog-thumb-bg: #ddd;
     --blog-thumb-bg-hover: #eee;
   }
