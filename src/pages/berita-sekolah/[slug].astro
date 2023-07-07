@@ -1,6 +1,7 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import { POSTS_ENDPOINT } from "@src/consts";
+import MainLayout from "@layouts/MainLayout.astro";
+import { POSTS_ENDPOINT } from "@src/scripts/consts";
+import { formatDate } from "@src/scripts/utils.js";
 
 export async function getStaticPaths() {
   const response = await fetch(POSTS_ENDPOINT);
@@ -20,15 +21,20 @@ const res = await fetch(`${POSTS_ENDPOINT}?slug=${slug}`);
 const [post] = await res.json();
 ---
 
-<Layout title={post.title.rendered}>
+<MainLayout title={post.title.rendered}>
   <article>
-    <h1>{post.title.rendered}</h1>
+    <header>
+      <h1>{post.title.rendered}</h1>
+      <div class="post-date">
+        <p>
+          <time datetime={post.date}>{formatDate(post.date)}</time>
+          (Diperbarui <time datetime={post.modified}
+            >{formatDate(post.modified)}</time
+          >)
+        </p>
+      </div>
+    </header>
+
     <Fragment set:html={post.content.rendered} />
   </article>
-</Layout>
-
-<style>
-  article {
-    background: #242424;
-  }
-</style>
+</MainLayout>
