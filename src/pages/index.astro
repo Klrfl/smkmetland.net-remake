@@ -35,7 +35,6 @@ const perusahaanArr = [
 ];
 
 const programKeahlian = await Astro.glob("./program-keahlian/*.md");
-console.log(programKeahlian);
 
 import { POSTS_ENDPOINT } from "@src/scripts/consts.js";
 const request = await fetch(POSTS_ENDPOINT);
@@ -43,8 +42,8 @@ const beritaArr = await request.json();
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<NavBar />
 	<div class="wrapper">
+		<NavBar />
 		<section class="hero">
 			<div class="hero__image">
 				<Image
