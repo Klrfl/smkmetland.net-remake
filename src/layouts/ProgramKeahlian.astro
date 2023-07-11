@@ -1,11 +1,12 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 
-const { title, description } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
-<MainLayout title={title} description={description}>
+<MainLayout title={frontmatter.title} description={frontmatter.description}>
   <article class="artikel-utama artikel-utama--program-keahlian">
+    <h1>{frontmatter.title}</h1>
     <slot />
   </article>
 </MainLayout>
