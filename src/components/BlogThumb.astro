@@ -10,22 +10,29 @@ const { post } = Astro.props;
 </li>
 
 <style>
+  .post {
+    display: flex;
+    flex-direction: column;
+  }
+
   .post > a {
     background: var(--blog-thumb-bg);
     color: inherit;
     text-decoration: none;
     padding: 2rem;
     display: inline-block;
+    flex-grow: 1;
   }
 
   .post > a:hover {
     background: var(--blog-thumb-bg-hover);
   }
-
-  /* .post p {
+</style>
+<style is:global>
+  .post p {
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
     overflow: hidden;
-  } */
+  }
 </style>
