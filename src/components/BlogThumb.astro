@@ -4,7 +4,7 @@ const { post } = Astro.props;
 
 <li class="post">
   <a href={`berita-sekolah/${post.slug}`}>
-    <h2>{post.title.rendered}</h2>
+    <h3>{post.title.rendered}</h3>
     <Fragment set:html={post.excerpt.rendered} />
   </a>
 </li>
