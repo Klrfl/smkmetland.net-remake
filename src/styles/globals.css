@@ -33,6 +33,20 @@ code {
     Bitstream Vera Sans Mono, Courier New, monospace;
 }
 
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.btn--cta {
+  background: var(--accent);
+}
+
+.btn--cta > a {
+  color: inherit;
+  text-decoration: none;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --hero-gradient: linear-gradient(to top, var(--white), #dededeaa);
