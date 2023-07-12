@@ -64,6 +64,12 @@ const beritaArr = await request.json();
 					Situs ini masih dalam tahap pengembangan, jadi jangan ngomong
 					aneh-aneh dulu yah
 				</p>
+				<button class="btn btn--cta">
+					<a
+						href="https://api.whatsapp.com/send/?phone=6281293395500&text&type=phone_number&app_absent=0"
+						>Daftar sekarang
+					</a>
+				</button>
 			</div>
 		</section>
 
@@ -257,5 +263,11 @@ const beritaArr = await request.json();
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 		gap: 1rem;
+	}
+
+	@media screen and (min-width: 60em) {
+		.hero {
+			min-height: calc(100vh - 9rem);
+		}
 	}
 </style>
