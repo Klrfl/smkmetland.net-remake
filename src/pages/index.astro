@@ -37,7 +37,7 @@ const perusahaanArr = [
 const programKeahlian = await Astro.glob("./program-keahlian/*.md");
 
 import { POSTS_ENDPOINT } from "@src/scripts/consts.js";
-const request = await fetch(POSTS_ENDPOINT);
+const request = await fetch(`${POSTS_ENDPOINT}?per_page=5`);
 const beritaArr = await request.json();
 ---
 
@@ -142,7 +142,13 @@ const beritaArr = await request.json();
 
 				<div class="berita card-container">
 					<ul class="berita-list">
-						{beritaArr.map((berita) => <BlogThumb post={berita} />)}
+						{
+							beritaArr.map((berita, index) => {
+								if (index === 0)
+									return <BlogThumb class="hero-post" post={berita} />;
+								else return <BlogThumb post={berita} />;
+							})
+						}
 					</ul>
 
 					<a href="/berita-sekolah">Lihat lebih banyak</a>
@@ -232,6 +238,7 @@ const beritaArr = await request.json();
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(18ch, 1fr));
 	}
+
 	.jurusan__card {
 		aspect-ratio: 1/1;
 		min-width: 15ch;
@@ -250,6 +257,10 @@ const beritaArr = await request.json();
 		display: grid;
 		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
 		gap: 1rem;
+
+		.hero-post {
+			grid-column: 1 / -1;
+		}
 	}
 
 	@media screen and (min-width: 60em) {
