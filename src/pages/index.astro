@@ -4,7 +4,7 @@ import NavBar from "@src/components/NavBar.astro";
 import BlogThumb from "@src/components/BlogThumb.astro";
 import Footer from "@src/components/Footer.astro";
 
-import { Image } from "@astrojs/image/components";
+import { Image } from "astro:assets";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@src/scripts/consts";
 
 const perusahaanArr = [
@@ -50,7 +50,7 @@ const beritaArr = await request.json();
 					src="/assets/hero-image.jpeg"
 					alt="Foto SMK tercintah"
 					width={700}
-					aspectRatio="3:2"
+          height={900}
 					format="webp"
 				/>
 			</div>
@@ -136,7 +136,7 @@ const beritaArr = await request.json();
 
 				<div class="berita card-container">
 					<ul class="berita-list">
-						{beritaArr.map((berita) => <BlogThumb post={berita} />)}
+						{beritaArr.map((berita:Object) => <BlogThumb post={berita} />)}
 					</ul>
 
 					<a href="/berita-sekolah">Lihat lebih banyak</a>
