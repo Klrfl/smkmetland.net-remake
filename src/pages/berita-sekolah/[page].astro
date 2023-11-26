@@ -1,0 +1,75 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import { POSTS_ENDPOINT } from "@src/scripts/consts.js";
+import BlogThumb from "../../components/BlogThumb.astro";
+
+export async function getStaticPaths({ paginate }) {
+  async function getPosts() {
+    try {
+      const request = await fetch(`${POSTS_ENDPOINT}?per_page=10`);
+      let result = await request.json();
+
+      // check for number of totalpages
+      for (const entry of request.headers.entries()) {
+        if (entry[0] === "x-wp-totalpages") {
+          const totalPages = Number(entry[1]);
+
+          // if not 1
+          if (totalPages !== 1) {
+            for (let i = 2; i <= totalPages; i++) {
+              const newPagesRequest = await fetch(
+                `${POSTS_ENDPOINT}?per_page=10&page=${i}`
+              );
+              const newPages = await newPagesRequest.json();
+              result = result.concat(newPages);
+            }
+          }
+          break;
+        }
+      }
+
+      if (request.status === 200) return result;
+      else return result.message;
+    } catch (err) {
+      console.error(err.message);
+      return err.message;
+    }
+  }
+
+  const result = await getPosts();
+  console.log(result);
+  return paginate(result, { pageSize: 10 });
+}
+
+const { page } = Astro.props;
+---
+
+<MainLayout>
+  <h1>Berita sekolah</h1>
+  <p>Berita sekolah terbaru terupdate terpercaya anjing</p>
+
+  <ul class="post-list">
+    {page.data.map((post) => <BlogThumb post={post} />)}
+    <!-- {
+      typeof result !== "string" &&
+        result.map((post) => <BlogThumb post={post} />)
+    }
+    {typeof result == "string" && <p>{result}</p>} -->
+  </ul>
+
+  <div class="next-buttons">
+    {page.url.prev && <a href={page.url.prev}>Halaman sebelumnya</a>}
+    {page.url.next && <a href={page.url.next}>Halaman selanjutnya</a>}
+    {(<a href={`/berita-sekolah/${page.lastPage}`}>Halaman terkahir</a>)}
+  </div>
+</MainLayout>
+
+<style>
+  .post-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+  }
+</style>

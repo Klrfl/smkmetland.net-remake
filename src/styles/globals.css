@@ -28,9 +28,33 @@ body {
   color: var(--text-color);
 }
 
+a {
+  text-decoration: none;
+}
+
 code {
   font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
     Bitstream Vera Sans Mono, Courier New, monospace;
+}
+
+h2 {
+  position: relative;
+  border-bottom: 3px solid var(--accent);
+  width: fit-content;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+.btn--cta {
+  background: var(--accent);
+}
+
+.btn--cta > a {
+  color: inherit;
+  text-decoration: none;
 }
 
 @media (prefers-color-scheme: light) {
