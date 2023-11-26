@@ -8,30 +8,30 @@ import { Image } from "astro:assets";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@src/scripts/consts";
 
 const perusahaanArr = [
-	{
-		nama: "Perusahaan",
-		link: "#",
-	},
-	{
-		nama: "Perusahaan",
-		link: "#",
-	},
-	{
-		nama: "Perusahaan",
-		link: "#",
-	},
-	{
-		nama: "Perusahaan",
-		link: "#",
-	},
-	{
-		nama: "Perusahaan",
-		link: "#",
-	},
-	{
-		nama: "Perusahaan",
-		link: "#",
-	},
+  {
+    nama: "Perusahaan",
+    link: "#",
+  },
+  {
+    nama: "Perusahaan",
+    link: "#",
+  },
+  {
+    nama: "Perusahaan",
+    link: "#",
+  },
+  {
+    nama: "Perusahaan",
+    link: "#",
+  },
+  {
+    nama: "Perusahaan",
+    link: "#",
+  },
+  {
+    nama: "Perusahaan",
+    link: "#",
+  },
 ];
 
 const programKeahlian = await Astro.glob("./program-keahlian/*.md");
@@ -42,220 +42,220 @@ const beritaArr = await request.json();
 ---
 
 <Layout title={SITE_TITLE} description={SITE_DESCRIPTION}>
-	<div class="wrapper">
-		<NavBar />
-		<section class="hero">
-			<div class="hero__image">
-				<Image
-					src="/assets/hero-image.jpeg"
-					alt="Foto SMK tercintah"
-					width={700}
+  <div class="wrapper">
+    <NavBar />
+    <section class="hero">
+      <div class="hero__image">
+        <Image
+          src="/assets/hero-image.jpeg"
+          alt="Foto SMK tercintah"
+          width={700}
           height={900}
-					format="webp"
-				/>
-			</div>
-			<div class="hero__text">
-				<h1>SMK Metland</h1>
-				<p>
-					Gua mau buat ulang <a href="https://smkmetland.net">smkmetland.net</a
-					>. Jelek banget soalnya...
-				</p>
-				<p>
-					Situs ini masih dalam tahap pengembangan, jadi jangan ngomong
-					aneh-aneh dulu yah
-				</p>
-			</div>
-		</section>
+          format="webp"
+        />
+      </div>
+      <div class="hero__text">
+        <h1>SMK Metland</h1>
+        <p>
+          Gua mau buat ulang <a href="https://smkmetland.net">smkmetland.net</a
+          >. Jelek banget soalnya...
+        </p>
+        <p>
+          Situs ini masih dalam tahap pengembangan, jadi jangan ngomong
+          aneh-aneh dulu yah
+        </p>
+      </div>
+    </section>
 
-		<section class="main-section" id="infografi">
-			<div class="main-section__content">
-				<h2>Infografi</h2>
-				<div class="infografi card-container">
-					<div class="infografi__card card">
-						<a href="#">
-							<h3><span class="stat">619</span> Siswa</h3>
-							<i class="fa-solid fa-user-friends"></i>
-						</a>
-					</div>
-					<div class="infografi__card card">
-						<a href="#">
-							<h3><span class="stat">68</span> Guru</h3>
-							<i class="fa-solid fa-chalkboard-teacher"></i>
-						</a>
-					</div>
-					<div class="infografi__card card">
-						<a href="#">
-							<h3><span class="stat">42</span> Tenaga Pendidikan & Caraka</h3>
-							<i class="fa-solid fa-people-group"></i>
-						</a>
-					</div>
-				</div>
-			</div>
-		</section>
+    <section class="main-section" id="infografi">
+      <div class="main-section__content">
+        <h2>Infografi</h2>
+        <div class="infografi card-container">
+          <div class="infografi__card card">
+            <a href="#">
+              <h3><span class="stat">619</span> Siswa</h3>
+              <i class="fa-solid fa-user-friends"></i>
+            </a>
+          </div>
+          <div class="infografi__card card">
+            <a href="#">
+              <h3><span class="stat">68</span> Guru</h3>
+              <i class="fa-solid fa-chalkboard-teacher"></i>
+            </a>
+          </div>
+          <div class="infografi__card card">
+            <a href="#">
+              <h3><span class="stat">42</span> Tenaga Pendidikan & Caraka</h3>
+              <i class="fa-solid fa-people-group"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-		<section class="main-section" id="program-keahlian">
-			<div class="main-section__content">
-				<h2>Program Keahlian</h2>
-				<p>Jangan masuk PPLG ya.</p>
+    <section class="main-section" id="program-keahlian">
+      <div class="main-section__content">
+        <h2>Program Keahlian</h2>
+        <p>Jangan masuk PPLG ya.</p>
 
-				<div class="jurusan card-container">
-					{
-						programKeahlian.map((keahlian) => (
-							<div class="jurusan__card card">
-								<a href={keahlian.url}>
-									<p>{keahlian.frontmatter.title}</p>
-									<i class:list={keahlian.frontmatter.iconClasses} />
-								</a>
-							</div>
-						))
-					}
-				</div>
-			</div>
-		</section>
+        <div class="jurusan card-container">
+          {
+            programKeahlian.map((keahlian) => (
+              <div class="jurusan__card card">
+                <a href={keahlian.url}>
+                  <p>{keahlian.frontmatter.title}</p>
+                  <i class:list={keahlian.frontmatter.iconClasses} />
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
 
-		<section class="main-section" id="kerjasama-industri">
-			<div class="main-section__content">
-				<h2>Kerjasama Industri</h2>
-				<div class="perusahaan card-container">
-					{
-						perusahaanArr.map((perusahaan) => (
-							<div class="perusahaan__card card">
-								<a href={perusahaan.link}>
-									<p>{perusahaan.nama}</p>
-								</a>
-							</div>
-						))
-					}
-				</div>
-			</div>
-		</section>
+    <section class="main-section" id="kerjasama-industri">
+      <div class="main-section__content">
+        <h2>Kerjasama Industri</h2>
+        <div class="perusahaan card-container">
+          {
+            perusahaanArr.map((perusahaan) => (
+              <div class="perusahaan__card card">
+                <a href={perusahaan.link}>
+                  <p>{perusahaan.nama}</p>
+                </a>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
 
-		<section class="main-section" id="berita-sekolah">
-			<div class="main-section__content">
-				<h2>Berita Sekolah</h2>
+    <section class="main-section" id="berita-sekolah">
+      <div class="main-section__content">
+        <h2>Berita Sekolah</h2>
 
-				<div class="berita card-container">
-					<ul class="berita-list">
-						{beritaArr.map((berita:Object) => <BlogThumb post={berita} />)}
-					</ul>
+        <div class="berita card-container">
+          <ul class="berita-list">
+            {beritaArr.map((berita: Object) => <BlogThumb post={berita} />)}
+          </ul>
 
-					<a href="/berita-sekolah">Lihat lebih banyak</a>
-				</div>
-			</div>
-		</section>
-		<Footer />
-	</div>
+          <a href="/berita-sekolah">Lihat lebih banyak</a>
+        </div>
+      </div>
+    </section>
+    <Footer />
+  </div>
 </Layout>
 
 <style lang="scss">
-	@use "../styles/abstracts/" as *;
+  @use "../styles/abstracts/" as *;
 
-	.wrapper {
-		max-height: 100vh;
-		overflow: hidden auto;
-		perspective: 10px;
-		transform-style: preserve-3d;
-	}
+  .wrapper {
+    max-height: 100vh;
+    overflow: hidden auto;
+    perspective: 10px;
+    transform-style: preserve-3d;
+  }
 
-	.hero {
-		min-height: 90vh;
-		transform-style: preserve-3d;
-		position: relative;
-		z-index: -1;
+  .hero {
+    min-height: 90vh;
+    transform-style: preserve-3d;
+    position: relative;
+    z-index: -1;
 
-		display: flex;
-		justify-content: center;
-		align-items: flex-end;
-	}
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
 
-	.hero__text {
-		background: var(--hero-gradient);
-		backdrop-filter: blur(0.5rem);
-		color: var(--text-color);
-		padding: 2rem;
-		flex-grow: 1;
+  .hero__text {
+    background: var(--hero-gradient);
+    backdrop-filter: blur(0.5rem);
+    color: var(--text-color);
+    padding: 2rem;
+    flex-grow: 1;
 
-		p {
-			max-width: 75ch;
-		}
-	}
+    p {
+      max-width: 75ch;
+    }
+  }
 
-	.hero__image {
-		position: absolute;
-		inset: 0;
-		transform: translateZ(-10px) scale(2);
-		width: 100vw;
-		height: 100vh;
+  .hero__image {
+    position: absolute;
+    inset: 0;
+    transform: translateZ(-10px) scale(2);
+    width: 100vw;
+    height: 100vh;
 
-		img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-		}
-	}
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
 
-	#daftar {
-		background: var(--accent);
-		padding: 1rem 2rem;
-		border-radius: 2rem;
+  #daftar {
+    background: var(--accent);
+    padding: 1rem 2rem;
+    border-radius: 2rem;
 
-		&:hover {
-			background: var(--accent-hover);
-		}
-	}
+    &:hover {
+      background: var(--accent-hover);
+    }
+  }
 
-	.main-section {
-		background: var(--main-section-bg);
-		padding: 2rem;
+  .main-section {
+    background: var(--main-section-bg);
+    padding: 2rem;
 
-		h2 {
-			position: relative;
-			width: max-content;
+    h2 {
+      position: relative;
+      width: max-content;
 
-			&::before {
-				content: "";
-				background: var(--accent);
-				position: absolute;
-				bottom: -0.4rem;
-				width: calc(100% + 10px);
-				height: 3px;
-			}
-		}
-		&__content {
-			max-width: 105ch;
-			margin: auto;
-		}
-	}
+      &::before {
+        content: "";
+        background: var(--accent);
+        position: absolute;
+        bottom: -0.4rem;
+        width: calc(100% + 10px);
+        height: 3px;
+      }
+    }
+    &__content {
+      max-width: 105ch;
+      margin: auto;
+    }
+  }
 
-	.card-container {
-		@include card-container;
-	}
-	.card {
-		@include card;
-	}
+  .card-container {
+    @include card-container;
+  }
+  .card {
+    @include card;
+  }
 
-	// program keahlian
-	.jurusan {
-		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(18ch, 1fr));
-	}
-	.jurusan__card {
-		aspect-ratio: 1/1;
-		min-width: 15ch;
-	}
+  // program keahlian
+  .jurusan {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18ch, 1fr));
+  }
+  .jurusan__card {
+    aspect-ratio: 1/1;
+    min-width: 15ch;
+  }
 
-	// kerjasama industri
-	.perusahaan__card {
-		flex: 1 1 0;
-	}
+  // kerjasama industri
+  .perusahaan__card {
+    flex: 1 1 0;
+  }
 
-	.berita-list {
-		list-style: none;
-		margin: 0;
-		padding: 0;
+  .berita-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 
-		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-		gap: 1rem;
-	}
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 1rem;
+  }
 </style>
