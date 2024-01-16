@@ -51,6 +51,7 @@
       <li><a href="/berita-sekolah/1">Berita Sekolah</a></li>
       <li><a href="/ppdb">PPDB</a></li>
       <li><a href="/bkk">BKK</a></li>
+      <li><a href="https://lpk.smkmetland.net">LPK</a></li>
     </ul>
   </nav>
 </header>
@@ -109,7 +110,9 @@
     min-height: 100vh;
 
     transform: translateY(-100%);
-    transition: transform 200ms ease, visibility 200ms ease;
+    transition:
+      transform 200ms ease,
+      visibility 200ms ease;
 
     &.active {
       transform: translate(0);
@@ -148,7 +151,9 @@
       background: #333;
       max-height: 0;
       overflow: hidden;
-      transition: max-height 200ms ease, visibility 200ms ease,
+      transition:
+        max-height 200ms ease,
+        visibility 200ms ease,
         opacity 200ms ease;
       visibility: hidden;
       opacity: 0;
