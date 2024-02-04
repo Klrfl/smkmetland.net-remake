@@ -1,20 +1,20 @@
 ---
 import BaseHead from "@components/BaseHead.astro";
 
-const { title, description } = Astro.props;
+const { title = "Selamat datang", description } = Astro.props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-	<head>
-		<script
-			src="https://kit.fontawesome.com/12334b3056.js"
-			crossorigin="anonymous"></script>
-		<BaseHead title={title} description={description} />
-	</head>
+  <head>
+    <script
+      src="https://kit.fontawesome.com/12334b3056.js"
+      crossorigin="anonymous"></script>
+    <BaseHead title={title} description={description} />
+  </head>
 
-	<body>
-		<slot />
-		<script src="../scripts/navbar.js"></script>
-	</body>
+  <body>
+    <slot />
+    <script src="../scripts/navbar.js"></script>
+  </body>
 </html>

@@ -7,7 +7,7 @@ import BlogThumb from "../../components/BlogThumb.astro";
 export const getStaticPaths = (async ({ paginate }) => {
   async function getPosts() {
     const request = await fetch(POSTS_ENDPOINT);
-    const resultArray = await request.json();
+    const postsArray = await request.json();
 
     // check total pages, if more than 1 then request more
     const totalPages = Number(request.headers.get("x-wp-totalpages"));
@@ -15,12 +15,12 @@ export const getStaticPaths = (async ({ paginate }) => {
     if (totalPages !== 1) {
       for (let i = 0; i < totalPages - 1; i++) {
         const request = await fetch(POSTS_ENDPOINT);
-        const result = await request.json();
+        const posts = await request.json();
 
-        resultArray.push(...result);
+        postsArray.push(...posts);
       }
     }
-    return resultArray;
+    return postsArray;
   }
 
   const result = await getPosts();
@@ -31,9 +31,9 @@ export const getStaticPaths = (async ({ paginate }) => {
 const { page } = Astro.props;
 ---
 
-<MainLayout>
+<MainLayout title="Berita sekolah">
   <h1>Berita sekolah</h1>
-  <p>Berita sekolah terbaru terupdate terpercaya anjing</p>
+  <p>Berita sekolah terbaru terupdate terpercaya</p>
 
   <ul class="post-list">
     {page.data.map((post) => <BlogThumb post={post} />)}
