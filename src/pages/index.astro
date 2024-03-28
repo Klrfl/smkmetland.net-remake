@@ -5,6 +5,7 @@ import BlogThumb from "@src/components/BlogThumb.astro";
 import Footer from "@src/components/Footer.astro";
 
 import { Image } from "astro:assets";
+import logo from "../assets/hero-image.jpeg";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@src/scripts/consts";
 
 const perusahaanArr = [
@@ -47,7 +48,7 @@ const beritaArr = await request.json();
     <section class="hero">
       <div class="hero__image">
         <Image
-          src="/assets/hero-image.jpeg"
+          src={logo}
           alt="Foto SMK tercintah"
           width={700}
           height={900}
