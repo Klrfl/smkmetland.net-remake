@@ -3,7 +3,7 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://smkmetland.netlify.app",
+  site: "https://smkmetland.pages.dev",
   integrations: [sitemap()],
   redirects: {
     "/berita-sekolah/": "berita-sekolah/1",
