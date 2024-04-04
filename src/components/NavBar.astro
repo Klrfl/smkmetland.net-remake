@@ -1,6 +1,35 @@
 ---
 import { Image } from "astro:assets";
 import logo from "../assets/metland-logo.png";
+
+interface SocialLink {
+  url: string;
+  label: string;
+  icon: string;
+}
+
+const socialLinks: SocialLink[] = [
+  {
+    url: "https://api.whatsapp.com/send/?phone=6281293395500&text&type=phone_number&app_absent=0",
+    label: "Whatsapp SMK Metland",
+    icon: "fa-brands fa-whatsapp",
+  },
+  {
+    url: "https://www.instagram.com/smkmetland/",
+    label: "Instagram SMK Metland",
+    icon: "fa-brands fa-instagram",
+  },
+  {
+    url: "https://id-id.facebook.com/SMKMetland/",
+    label: "Facebook SMK Metland",
+    icon: "fa-brands fa-facebook",
+  },
+  {
+    url: "https://www.youtube.com/channel/UCrxrH9tASSF3FNez-fTMKZA",
+    label: "YouTube SMK Metland",
+    icon: "fa-brands fa-youtube",
+  },
+];
 ---
 
 <header>
@@ -11,27 +40,20 @@ import logo from "../assets/metland-logo.png";
   </section>
 
   <nav class="socials" id="secondary-nav">
-    <a
-      href="https://api.whatsapp.com/send/?phone=6281293395500&text&type=phone_number&app_absent=0"
-    >
-      <i class="fa-brands fa-whatsapp"></i>
-    </a>
-    <a href="https://www.instagram.com/smkmetland/">
-      <i class="fa-brands fa-instagram"></i>
-    </a>
-    <a href="https://id-id.facebook.com/SMKMetland/">
-      <i class="fa-brands fa-facebook"></i>
-    </a>
-    <a href="https://www.youtube.com/channel/UCrxrH9tASSF3FNez-fTMKZA">
-      <i class="fa-brands fa-youtube"></i>
-    </a>
+    {
+      socialLinks.map(({ url, label, icon }) => (
+        <a href={url} aria-label={label} target="_blank">
+          <i class={icon} />
+        </a>
+      ))
+    }
     <button id="open-nav"> <i class="fa-solid fa-bars"></i></button>
   </nav>
 
   <nav class="main-nav" id="main-nav">
     <div class="nav-header">
       <div class="logo">
-        <img src="../assets/metland-logo.png" alt="logo metland" />
+        <Image src={logo} alt="logo SMK Metland" />
       </div>
       <button id="close-nav"><i class="fa-solid fa-xmark"></i></button>
     </div>
