@@ -7,7 +7,17 @@ so I decided to remake it with Astro. The blog posts are fetched directly from
 the original site's Wordpress API and then prebuilt into HTML files. So it's not
 going to update when there is a new post.
 
-## 🧞 Commands
+## 🧞 Development
+
+This website is obviously about SMK Metland, so it fetches posts from the `posts`
+endpoint of `smkmetland.net/ppdb`. But sometimes, the site just go down and would not
+work. For that reason, for development you should change the endpoint to some
+other wordpress website (that has a public `posts` endpoint). Copy the `.env.example`
+to a file named `.env`, then put your endpoint there.
+
+```sh
+cp .env.example .env
+```
 
 All commands are run from the root of the project, from a terminal:
 
