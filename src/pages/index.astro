@@ -138,11 +138,12 @@ const beritaArr = await request.json();
         <div class="berita card-container">
           <ul class="berita-list">
             {
-              beritaArr.map((berita, index) => {
-                if (index === 0)
-                  return <BlogThumb class="hero-post" post={berita} />;
-                else return <BlogThumb post={berita} />;
-              })
+              beritaArr.map((berita, index) => (
+                <BlogThumb
+                  class:list={[{ "hero-post": index === 0 }]}
+                  post={berita}
+                />
+              ))
             }
           </ul>
           <a href="/berita-sekolah">Lihat lebih banyak</a>
@@ -255,10 +256,6 @@ const beritaArr = await request.json();
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 1rem;
-
-    .hero-post {
-      grid-column: 1 / -1;
-    }
   }
 
   @media screen and (min-width: 60em) {

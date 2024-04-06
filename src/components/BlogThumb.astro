@@ -27,6 +27,10 @@ const { class: className, post } = Astro.props;
   .post > a:hover {
     background: var(--blog-thumb-bg-hover);
   }
+
+  .post.hero-post {
+    grid-column: 1 / -1;
+  }
 </style>
 <style is:global>
   .post p {
