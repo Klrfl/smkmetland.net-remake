@@ -29,7 +29,10 @@ body {
 }
 
 a {
-  text-decoration: none;
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 0.2rem;
 }
 
 h2 {
