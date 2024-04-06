@@ -1,5 +1,6 @@
 ---
 import { Image } from "astro:assets";
+import { Icon } from "astro-icon/components";
 import logo from "../assets/metland-logo.png";
 
 interface SocialLink {
@@ -12,22 +13,22 @@ const socialLinks: SocialLink[] = [
   {
     url: "https://api.whatsapp.com/send/?phone=6281293395500&text&type=phone_number&app_absent=0",
     label: "Whatsapp SMK Metland",
-    icon: "fa-brands fa-whatsapp",
+    icon: "mdi:whatsapp",
   },
   {
     url: "https://www.instagram.com/smkmetland/",
     label: "Instagram SMK Metland",
-    icon: "fa-brands fa-instagram",
+    icon: "mdi:instagram",
   },
   {
     url: "https://id-id.facebook.com/SMKMetland/",
     label: "Facebook SMK Metland",
-    icon: "fa-brands fa-facebook",
+    icon: "mdi:facebook",
   },
   {
     url: "https://www.youtube.com/channel/UCrxrH9tASSF3FNez-fTMKZA",
     label: "YouTube SMK Metland",
-    icon: "fa-brands fa-youtube",
+    icon: "mdi:youtube",
   },
 ];
 ---
@@ -43,12 +44,12 @@ const socialLinks: SocialLink[] = [
     {
       socialLinks.map(({ url, label, icon }) => (
         <a href={url} aria-label={label} target="_blank">
-          <i class={icon} />
+          <Icon size={20} name={icon} />
         </a>
       ))
     }
     <button id="open-nav" title="open navigation">
-      <i class="fa-solid fa-bars"></i>
+      <Icon name="mdi:hamburger-menu" />
     </button>
   </nav>
 
@@ -58,7 +59,7 @@ const socialLinks: SocialLink[] = [
         <Image src={logo} alt="logo SMK Metland" />
       </div>
       <button id="close-nav" title="close navigation">
-        <i class="fa-solid fa-xmark"></i>
+        <Icon name="mdi:close" />
       </button>
     </div>
     <ul>
@@ -66,7 +67,8 @@ const socialLinks: SocialLink[] = [
 
       <li>
         <button>
-          Program Keahlian <i class="fa-solid fa-chevron-down"></i>
+          <span>Program Keahlian</span>
+          <Icon name="mdi:menu-down" />
         </button>
 
         <ul class="main-nav__sub-menu">
@@ -82,7 +84,10 @@ const socialLinks: SocialLink[] = [
         </ul>
       </li>
       <li>
-        <button>Kurikulum <i class="fa-solid fa-chevron-down"></i></button>
+        <button>
+          <span>Kurikulum</span>
+          <Icon name="mdi:menu-down" />
+        </button>
         <ul class="main-nav__sub-menu">
           <li><a href="#">Kurikulum operasional sekolah</a></li>
           <li>
@@ -171,7 +176,6 @@ const socialLinks: SocialLink[] = [
       margin: 0;
       padding: 0;
       list-style: none;
-      text-align: right;
     }
 
     & > ul > li {
@@ -186,6 +190,11 @@ const socialLinks: SocialLink[] = [
       padding: 1rem 2rem;
       display: block;
       width: 100%;
+    }
+
+    li button {
+      display: flex;
+      gap: 0.5rem;
     }
 
     .main-nav__sub-menu {
