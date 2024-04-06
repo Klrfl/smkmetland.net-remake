@@ -32,18 +32,6 @@ a {
   text-decoration: none;
 }
 
-code {
-  font-family:
-    Menlo,
-    Monaco,
-    Lucida Console,
-    Liberation Mono,
-    DejaVu Sans Mono,
-    Bitstream Vera Sans Mono,
-    Courier New,
-    monospace;
-}
-
 h2 {
   position: relative;
   border-bottom: 3px solid var(--accent);

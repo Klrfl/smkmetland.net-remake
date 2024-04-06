@@ -1,6 +1,8 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
+import "@fontsource/montserrat";
+import "@fontsource/montserrat/700.css";
 import "@src/styles/globals.css";
 import "@src/styles/resets.css";
 
@@ -46,11 +48,3 @@ const image = "/assets/smkmetland.net-homepage.png";
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={new URL(image, Astro.url)} />
-
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap"
-  rel="stylesheet"
-/>
