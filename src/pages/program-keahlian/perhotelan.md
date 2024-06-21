@@ -1,7 +1,7 @@
 ---
 layout: "@layouts/ProgramKeahlian.astro"
 title: Perhotelan
-iconClasses: fa-solid fa-hotel
+iconClasses: mdi:hotel
 ---
 
 Ga tau jg

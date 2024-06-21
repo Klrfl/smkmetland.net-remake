@@ -1,7 +1,7 @@
 ---
 layout: "@layouts/ProgramKeahlian.astro"
 title: Tata Boga
-iconClasses: fa-solid fa-utensils
+iconClasses: mdi:utensils-fork-knife
 ---
 
 Masak-masak, gitu doang yodah

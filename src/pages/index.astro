@@ -4,7 +4,9 @@ import NavBar from "@src/components/NavBar.astro";
 import BlogThumb from "@src/components/BlogThumb.astro";
 import Footer from "@src/components/Footer.astro";
 
+import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
+
 import logo from "../assets/hero-image.jpeg";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@src/scripts/consts";
 
@@ -99,18 +101,18 @@ const beritaArr = await request.json();
         <h2>Program Keahlian</h2>
         <p>Jangan masuk PPLG ya.</p>
 
-        <div class="jurusan card-container">
+        <ul class="jurusan card-container">
           {
             programKeahlian.map((keahlian) => (
-              <div class="jurusan__card card">
+              <li class="jurusan__card card">
                 <a href={keahlian.url}>
                   <p>{keahlian.frontmatter.title}</p>
-                  <i class:list={keahlian.frontmatter.iconClasses} />
+                  <Icon name={keahlian.frontmatter.iconClasses} />
                 </a>
-              </div>
+              </li>
             ))
           }
-        </div>
+        </ul>
       </div>
     </section>
 
@@ -228,6 +230,13 @@ const beritaArr = await request.json();
   .card-container {
     @include card-container;
   }
+
+  .jurusan.card-container {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
   .card {
     @include card;
   }

@@ -1,7 +1,7 @@
 ---
 layout: "@layouts/ProgramKeahlian.astro"
 title: Pengembangan Perangkat Lunak dan Gim
-iconClasses: fa-solid fa-terminal
+iconClasses: mdi:code-tags
 ---
 
 Gua buat duluan karena GW PPLG
