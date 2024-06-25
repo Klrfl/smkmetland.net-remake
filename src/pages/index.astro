@@ -7,6 +7,8 @@ import Footer from "@/components/Footer.astro";
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 
+import { getCollection } from "astro:content";
+
 import logo from "../assets/hero-image.jpeg";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/scripts/consts";
 
@@ -37,7 +39,7 @@ const perusahaanArr = [
   },
 ];
 
-const programKeahlian = await Astro.glob("./program-keahlian/*.md");
+const programKeahlian = await getCollection("program-keahlian");
 
 import { POSTS_ENDPOINT } from "@/scripts/consts.js";
 const request = await fetch(`${POSTS_ENDPOINT}?per_page=5`);
@@ -103,11 +105,11 @@ const beritaArr = await request.json();
 
         <ul class="jurusan card-container">
           {
-            programKeahlian.map((keahlian) => (
+            programKeahlian.map(({ data }) => (
               <li class="jurusan__card card">
-                <a href={keahlian.url}>
-                  <p>{keahlian.frontmatter.title}</p>
-                  <Icon name={keahlian.frontmatter.iconClasses} />
+                <a href={data.url}>
+                  <p>{data.title}</p>
+                  <Icon name={data.iconClasses} />
                 </a>
               </li>
             ))

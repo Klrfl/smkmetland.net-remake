@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { Icon } from "astro-icon/components";
 import logo from "../assets/metland-logo.png";
+import { getCollection } from "astro:content";
 
 interface SocialLink {
   url: string;
@@ -31,6 +32,8 @@ const socialLinks: SocialLink[] = [
     icon: "mdi:youtube",
   },
 ];
+
+const programKeahlian = await getCollection("program-keahlian");
 ---
 
 <header>
@@ -72,15 +75,15 @@ const socialLinks: SocialLink[] = [
         </button>
 
         <ul class="main-nav__sub-menu">
-          <li><a href="/program-keahlian/perhotelan">Perhotelan</a></li>
-          <li><a href="/program-keahlian/akutansi">Akutansi</a></li>
-          <li><a href="/program-keahlian/tb">Tata Boga</a></li>
-          <li>
-            <a href="/program-keahlian/pplg">
-              Pengembangan Perangkat Lunak dan Gim
-            </a>
-          </li>
-          <li><a href="/program-keahlian/dkv">Desain Komunikasi Visual</a></li>
+          {
+            programKeahlian.map((program) => (
+              <li>
+                <a href={`/program-keahlian/${program.slug}`}>
+                  {program.data.title}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </li>
       <li>

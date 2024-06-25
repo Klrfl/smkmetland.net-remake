@@ -1,0 +1,22 @@
+---
+import ProgramKeahlian from "@/layouts/ProgramKeahlian.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const programKeahlian = await getCollection("program-keahlian");
+  return programKeahlian.map((program) => {
+    return {
+      params: { slug: program.slug },
+      props: { program },
+    };
+  });
+}
+
+const { slug } = Astro.params;
+const { program } = Astro.props;
+const { Content } = await program.render();
+---
+
+<ProgramKeahlian frontmatter={program.data}>
+  <Content />
+</ProgramKeahlian>
