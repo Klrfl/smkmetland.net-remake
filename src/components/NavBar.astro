@@ -34,6 +34,7 @@ const socialLinks: SocialLink[] = [
 ];
 
 const programKeahlian = await getCollection("program-keahlian");
+const kurikulum = await getCollection("kurikulum");
 ---
 
 <header>
@@ -93,11 +94,15 @@ const programKeahlian = await getCollection("program-keahlian");
         </button>
         <ul class="main-nav__sub-menu">
           <li><a href="#">Kurikulum operasional sekolah</a></li>
-          <li>
-            <a href="/kurikulum/sarana-praktik-siswa">Sarana praktik siswa</a>
-          </li>
-          <li><a href="/kurikulum/organisasi">Organisasi</a></li>
-          <li><a href="/kurikulum/ekstrakurikuler">Ekstrakurikuler</a></li>
+          {
+            kurikulum.map((kurikulum) => (
+              <li>
+                <a href={`/kurikulum/${kurikulum.slug}`}>
+                  {kurikulum.data.title}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </li>
 

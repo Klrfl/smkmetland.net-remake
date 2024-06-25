@@ -2,22 +2,18 @@
 title: Organisasi
 ---
 
-  <h1>Organisasi</h1>
-  <p>
-    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga accusamus
-    ipsam aspernatur ex quo animi non esse consequatur eius nesciunt iure
-    perspiciatis voluptatem dolores, repellat dicta maxime deleniti maiores
-    ratione!
-  </p>
-  <ul>
-    <li>OSIS</li>
-    <li>Cinematography Metland School</li>
-    <li>Paskibra</li>
-    <li>Majelis Perwakilan Kelas</li>
-    <li>Rohis</li>
-    <li>Rohkris</li>
-    <li>Pramuka</li>
-    <li>Maheswara/Maheswari</li>
-    <li>Kader Kesehatan Remaja</li>
-    <li>Metland School Projects</li>
-  </ul>
+Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga accusamus
+ipsam aspernatur ex quo animi non esse consequatur eius nesciunt iure
+perspiciatis voluptatem dolores, repellat dicta maxime deleniti maiores
+ratione!
+
+- OSIS
+- Cinematography Metland School
+- Paskibra
+- Majelis Perwakilan Kelas
+- Rohis
+- Rohkris
+- Pramuka
+- Maheswara/Maheswari
+- Kader Kesehatan Remaja
+- Metland School Projects

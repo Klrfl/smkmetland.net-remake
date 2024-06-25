@@ -1,0 +1,20 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const kurikulum = await getCollection("kurikulum");
+  return kurikulum.map((kurikulum) => ({
+    params: { slug: kurikulum.slug },
+    props: { kurikulum },
+  }));
+}
+
+const { kurikulum } = Astro.props;
+const { Content } = await kurikulum.render();
+---
+
+<MainLayout title={kurikulum.data.title}>
+  <h1>{kurikulum.data.title}</h1>
+  <Content />
+</MainLayout>
