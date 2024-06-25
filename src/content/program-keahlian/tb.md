@@ -1,5 +1,4 @@
 ---
-layout: "@/layouts/ProgramKeahlian.astro"
 title: Tata Boga
 iconClasses: mdi:utensils-fork-knife
 ---

@@ -1,9 +1,7 @@
 ---
-import MainLayout from "@/layouts/MainLayout.astro";
-const title = "Organisasi";
+title: Organisasi
 ---
 
-<MainLayout title={title}>
   <h1>Organisasi</h1>
   <p>
     Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga accusamus
@@ -23,4 +21,3 @@ const title = "Organisasi";
     <li>Kader Kesehatan Remaja</li>
     <li>Metland School Projects</li>
   </ul>
-</MainLayout>

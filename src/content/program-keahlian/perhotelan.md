@@ -1,5 +1,4 @@
 ---
-layout: "@/layouts/ProgramKeahlian.astro"
 title: Perhotelan
 iconClasses: mdi:hotel
 ---

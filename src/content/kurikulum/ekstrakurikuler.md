@@ -1,10 +1,7 @@
 ---
-import MainLayout from "@/layouts/MainLayout.astro";
-
-const title = "Ekstrakurikuler";
+title: Ekstrakurikuler
 ---
 
-<MainLayout title={title}>
   <h1>{title}</h1>
   <p>DI SMK metland, terdapat ekskul.</p>
   <p>
@@ -23,4 +20,3 @@ const title = "Ekstrakurikuler";
     <li>Futsal</li>
     <li>Basket</li>
   </ul>
-</MainLayout>

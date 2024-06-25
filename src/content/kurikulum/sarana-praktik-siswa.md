@@ -1,10 +1,7 @@
 ---
-import MainLayout from "@/layouts/MainLayout.astro";
-
-const title = "Sarana Praktik Siswa";
+title: Sarana Praktik Siswa
 ---
 
-<MainLayout title={title} description="Sarana praktik siswa di SMK Metland">
   <h1>{title}</h1>
   <p>
     SMK Metland menyediakan beberapa sarana praktik siswa untuk membantu
@@ -25,4 +22,3 @@ const title = "Sarana Praktik Siswa";
       guys
     </li>
   </ul>
-</MainLayout>
