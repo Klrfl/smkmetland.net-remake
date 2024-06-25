@@ -1,7 +1,7 @@
 ---
-import MainLayout from "@layouts/MainLayout.astro";
-import { POSTS_ENDPOINT } from "@src/scripts/consts";
-import { formatDate } from "@src/scripts/utils.js";
+import MainLayout from "@/layouts/MainLayout.astro";
+import { POSTS_ENDPOINT } from "@/scripts/consts";
+import { formatDate } from "@/scripts/utils.js";
 
 export async function getStaticPaths() {
   const response = await fetch(POSTS_ENDPOINT);
@@ -28,7 +28,7 @@ const [post] = await res.json();
       <div class="post-date">
         <p>
           <time datetime={post.date}>{formatDate(post.date)}</time>
-          (Diperbarui <time datetime={post.modified}
+           (Diperbarui <time datetime={post.modified}
             >{formatDate(post.modified)}</time
           >)
         </p>

@@ -1,5 +1,5 @@
 ---
-layout: "@layouts/ProgramKeahlian.astro"
+layout: "@/layouts/ProgramKeahlian.astro"
 title: Desain Komunikasi Visual
 iconClasses: mdi:camera
 ---

@@ -1,5 +1,5 @@
 ---
-layout: "@layouts/ProgramKeahlian.astro"
+layout: "@/layouts/ProgramKeahlian.astro"
 title: Akutansi
 iconClasses: mdi:money
 ---

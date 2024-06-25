@@ -1,14 +1,14 @@
 ---
-import Layout from "@layouts/Layout.astro";
-import NavBar from "@src/components/NavBar.astro";
-import BlogThumb from "@src/components/BlogThumb.astro";
-import Footer from "@src/components/Footer.astro";
+import Layout from "@/layouts/Layout.astro";
+import NavBar from "@/components/NavBar.astro";
+import BlogThumb from "@/components/BlogThumb.astro";
+import Footer from "@/components/Footer.astro";
 
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 
 import logo from "../assets/hero-image.jpeg";
-import { SITE_TITLE, SITE_DESCRIPTION } from "@src/scripts/consts";
+import { SITE_TITLE, SITE_DESCRIPTION } from "@/scripts/consts";
 
 const perusahaanArr = [
   {
@@ -39,7 +39,7 @@ const perusahaanArr = [
 
 const programKeahlian = await Astro.glob("./program-keahlian/*.md");
 
-import { POSTS_ENDPOINT } from "@src/scripts/consts.js";
+import { POSTS_ENDPOINT } from "@/scripts/consts.js";
 const request = await fetch(`${POSTS_ENDPOINT}?per_page=5`);
 const beritaArr = await request.json();
 ---

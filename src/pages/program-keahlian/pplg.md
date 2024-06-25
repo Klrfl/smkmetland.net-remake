@@ -1,5 +1,5 @@
 ---
-layout: "@layouts/ProgramKeahlian.astro"
+layout: "@/layouts/ProgramKeahlian.astro"
 title: Pengembangan Perangkat Lunak dan Gim
 iconClasses: mdi:code-tags
 ---
