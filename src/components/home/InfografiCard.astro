@@ -1,0 +1,34 @@
+---
+import { Icon } from "astro-icon/components";
+interface Props {
+  kind: string;
+  number: number;
+  icon: string;
+}
+
+const { kind, number, icon } = Astro.props;
+---
+
+<div class="infografi__card card">
+  <a href="#">
+    <h3><span class="stat">{number}</span> {kind}</h3>
+    <Icon size={24} name={icon} class="icon" />
+  </a>
+</div>
+
+<style lang="scss">
+  @use "../../styles/abstracts/" as *;
+
+  .card {
+    @include card;
+    a {
+      gap: 1.5rem;
+    }
+    h3 {
+      margin: 0;
+    }
+    .icon {
+      order: -1;
+    }
+  }
+</style>

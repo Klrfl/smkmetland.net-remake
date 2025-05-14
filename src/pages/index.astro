@@ -12,6 +12,30 @@ import { getCollection } from "astro:content";
 import logo from "../assets/hero-image.jpeg";
 import { SITE_TITLE, SITE_DESCRIPTION } from "@/scripts/consts";
 
+interface Infografi {
+  kind: string;
+  number: number;
+  icon: string;
+}
+
+const infografi: Infografi[] = [
+  {
+    number: 68,
+    icon: "mdi:teach",
+    kind: "Guru",
+  },
+  {
+    number: 68,
+    icon: "mdi:graduation-cap",
+    kind: "Siswa",
+  },
+  {
+    number: 68,
+    icon: "mdi:account-tie",
+    kind: "Tendik",
+  },
+];
+
 const perusahaanArr = [
   {
     nama: "Perusahaan",
@@ -42,6 +66,7 @@ const perusahaanArr = [
 const programKeahlian = await getCollection("program-keahlian");
 
 import { POSTS_ENDPOINT } from "@/scripts/consts.js";
+import InfografiCard from "@/components/home/InfografiCard.astro";
 const request = await fetch(`${POSTS_ENDPOINT}?per_page=5`);
 const beritaArr = await request.json();
 ---
@@ -72,28 +97,16 @@ const beritaArr = await request.json();
         </p>
       </div>
     </section>
+
     <section class="main-section" id="infografi">
       <div class="main-section__content">
         <h2>Infografi</h2>
         <div class="infografi card-container">
-          <div class="infografi__card card">
-            <a href="#">
-              <h3><span class="stat">619</span> Siswa</h3>
-              <i class="fa-solid fa-user-friends"></i>
-            </a>
-          </div>
-          <div class="infografi__card card">
-            <a href="#">
-              <h3><span class="stat">68</span> Guru</h3>
-              <i class="fa-solid fa-chalkboard-teacher"></i>
-            </a>
-          </div>
-          <div class="infografi__card card">
-            <a href="#">
-              <h3><span class="stat">42</span> Tenaga Pendidikan & Caraka</h3>
-              <i class="fa-solid fa-people-group"></i>
-            </a>
-          </div>
+          {
+            infografi.map(({ kind, number, icon }) => (
+              <InfografiCard {kind} {number} {icon} />
+            ))
+          }
         </div>
       </div>
     </section>
@@ -271,7 +284,7 @@ const beritaArr = await request.json();
 
   @media screen and (min-width: 60em) {
     .hero {
-      min-height: calc(100vh - 9rem);
+      min-height: 50rem;
     }
   }
 </style>
