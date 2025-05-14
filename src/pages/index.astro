@@ -67,6 +67,7 @@ const programKeahlian = await getCollection("program-keahlian");
 
 import { POSTS_ENDPOINT } from "@/scripts/consts.js";
 import InfografiCard from "@/components/home/InfografiCard.astro";
+import JurusanCard from "@/components/home/JurusanCard.astro";
 const request = await fetch(`${POSTS_ENDPOINT}?per_page=5`);
 const beritaArr = await request.json();
 ---
@@ -102,11 +103,7 @@ const beritaArr = await request.json();
       <div class="main-section__content">
         <h2>Infografi</h2>
         <div class="infografi card-container">
-          {
-            infografi.map(({ kind, number, icon }) => (
-              <InfografiCard {kind} {number} {icon} />
-            ))
-          }
+          {infografi.map((i) => <InfografiCard {...i} />)}
         </div>
       </div>
     </section>
@@ -118,13 +115,8 @@ const beritaArr = await request.json();
 
         <ul class="jurusan card-container">
           {
-            programKeahlian.map(({ data }) => (
-              <li class="jurusan__card card">
-                <a href={data.url}>
-                  <p>{data.title}</p>
-                  <Icon name={data.iconClasses} />
-                </a>
-              </li>
+            programKeahlian.map(({ data, slug }) => (
+              <JurusanCard {...data} url={slug} />
             ))
           }
         </ul>
@@ -259,7 +251,7 @@ const beritaArr = await request.json();
   // program keahlian
   .jurusan {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18ch, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(35ch, 1fr));
   }
 
   .jurusan__card {

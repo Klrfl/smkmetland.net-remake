@@ -5,6 +5,12 @@ const programKeahlianCollection = defineCollection({
   schema: z.object({
     title: z.string(),
     iconClasses: z.string(),
+    image: z
+      .object({
+        url: z.string().url().optional(),
+        alt: z.string().optional(),
+      })
+      .optional(),
   }),
 });
 

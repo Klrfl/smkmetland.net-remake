@@ -1,0 +1,66 @@
+---
+const { title, url, image } = Astro.props;
+---
+
+<li class="card">
+  {
+    image !== undefined && (
+      <img
+        class="image"
+        width="200"
+        height="100"
+        src={image.url}
+        alt={image.alt}
+      />
+    )
+  }
+  <a class="link" href={url}>
+    <p>{title}</p>
+  </a>
+</li>
+
+<style>
+  /**
+  * TODO: make sure entire card is clickable
+  * Watch adam watchan's Tailwind YouTube series for more details 
+  */
+  .card {
+    position: relative;
+    min-height: 30ch;
+    overflow: hidden;
+    border-radius: 1rem;
+
+    .image {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+
+      transition: scale 500ms ease;
+    }
+
+    &:hover .image {
+      scale: 1.2;
+    }
+
+    /* gradient */
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(to bottom, transparent, black);
+    }
+
+    .link {
+      display: block;
+      position: absolute;
+      inset: 0;
+      top: auto;
+      z-index: 2;
+
+      padding: 1.5rem 3rem;
+      font-size: 1.2rem;
+    }
+  }
+</style>
