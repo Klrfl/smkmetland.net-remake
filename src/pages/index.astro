@@ -36,30 +36,58 @@ const infografi: Infografi[] = [
   },
 ];
 
-const perusahaanArr = [
+interface Perusahaan {
+  nama: string;
+  link: string;
+  image: {
+    url: string;
+    alt?: string;
+  };
+}
+
+const perusahaanArr: Perusahaan[] = [
   {
-    nama: "Perusahaan",
+    nama: "Grand Metropolitan",
+    image: {
+      url: "https://smkmetland.net/ppdb/wp-content/uploads/2023/01/Grand_Metropolitan-removebg-preview-150x150.png",
+    },
     link: "#",
+  },
+  {
+    nama: "Virtalus",
+    link: "#",
+    image: {
+      url: "https://smkmetland.net/ppdb/wp-content/uploads/2023/11/virtalus-150x150.png",
+      alt: "Virtalus",
+    },
+  },
+  {
+    nama: "The Ritz-Carlton",
+    link: "#",
+    image: {
+      url: "https://smkmetland.net/ppdb/wp-content/uploads/2023/11/ritz-calton-150x150.png",
+    },
   },
   {
     nama: "Perusahaan",
     link: "#",
+    image: {
+      url: "https://smkmetland.net/ppdb/wp-content/uploads/2023/11/unesco-150x150.png",
+    },
+  },
+  {
+    nama: "Grand Hyatt",
+    link: "#",
+    image: {
+      url: "https://smkmetland.net/ppdb/wp-content/uploads/2023/11/dt_153037286-150x90.png",
+    },
   },
   {
     nama: "Perusahaan",
     link: "#",
-  },
-  {
-    nama: "Perusahaan",
-    link: "#",
-  },
-  {
-    nama: "Perusahaan",
-    link: "#",
-  },
-  {
-    nama: "Perusahaan",
-    link: "#",
+    image: {
+      url: "https://smkmetland.net/ppdb/wp-content/uploads/2023/01/Metropolitan_Mall_Cibubur-removebg-preview-150x150.png",
+    },
   },
 ];
 
@@ -126,12 +154,19 @@ const beritaArr = await request.json();
     <section class="main-section" id="kerjasama-industri">
       <div class="main-section__content">
         <h2>Kerjasama Industri</h2>
-        <div class="perusahaan card-container">
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+          delectus adipisci aperiam, porro incidunt temporibus molestias tempore
+          blanditiis nihil eveniet in ut cupiditate culpa minus natus
+          accusantium error, tempora est!
+        </p>
+
+        <div class="perusahaan">
           {
-            perusahaanArr.map((perusahaan) => (
-              <div class="perusahaan__card card">
-                <a href={perusahaan.link}>
-                  <p>{perusahaan.nama}</p>
+            perusahaanArr.map(({ link, image }) => (
+              <div class="perusahaan__card">
+                <a href={link}>
+                  <img class="image" src={image.url} alt={image.alt} />
                 </a>
               </div>
             ))
@@ -260,8 +295,22 @@ const beritaArr = await request.json();
   }
 
   // kerjasama industri
+  .perusahaan {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20ch, 1fr));
+    gap: 1rem;
+  }
+
   .perusahaan__card {
-    flex: 1 1 0;
+    background: white;
+    border-radius: 0.5rem;
+
+    .image {
+      filter: grayscale(100%);
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .berita-list {
