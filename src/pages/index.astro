@@ -20,17 +20,17 @@ interface Infografi {
 
 const infografi: Infografi[] = [
   {
-    number: 68,
+    number: 75,
     icon: "mdi:teach",
     kind: "Guru",
   },
   {
-    number: 68,
+    number: 683,
     icon: "mdi:graduation-cap",
     kind: "Siswa",
   },
   {
-    number: 68,
+    number: 28,
     icon: "mdi:account-tie",
     kind: "Tendik",
   },
@@ -116,7 +116,7 @@ const beritaArr = await request.json();
       </figure>
 
       <figcaption class="hero__text">
-        <h1>SMK Metland</h1>
+        <h1>Welcome to the Smiling Campus!</h1>
         <p>
           Gua mau buat ulang <a href="https://smkmetland.net">smkmetland.net</a
           >. Jelek banget soalnya... Lorem ipsum, dolor sit amet consectetur
@@ -262,6 +262,10 @@ const beritaArr = await request.json();
     color: var(--text-color);
     padding: 2rem;
     flex-grow: 1;
+
+    h1 {
+      font-size: 2.5rem;
+    }
 
     p {
       max-width: 75ch;
