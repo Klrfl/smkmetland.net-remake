@@ -1,6 +1,7 @@
 :root {
   color-scheme: light dark;
   --accent: #035757;
+  --accent-dark: #024646;
   --accent-hover: #024141;
 
   --accent-gradient: linear-gradient(
@@ -30,6 +31,10 @@ body {
 
 a {
   color: inherit;
+  text-decoration: none;
+}
+
+.prose a {
   text-decoration: underline;
   text-decoration-color: var(--accent);
   text-underline-offset: 0.2rem;
@@ -43,17 +48,23 @@ h2 {
 }
 
 .btn {
-  padding: 0.5rem 1rem;
+  display: inline-block;
+  padding: 1rem 2rem;
   border-radius: 0.5rem;
+  background: var(--grey);
+  transition: background-color 200ms ease;
+}
+
+.btn:hover {
+  background: var(--dark-grey);
 }
 
 .btn--cta {
   background: var(--accent);
 }
 
-.btn--cta > a {
-  color: inherit;
-  text-decoration: none;
+.btn--cta:hover {
+  background: var(--accent-dark);
 }
 
 @media (prefers-color-scheme: light) {

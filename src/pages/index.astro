@@ -104,7 +104,7 @@ const beritaArr = await request.json();
   <div class="wrapper">
     <NavBar />
     <section class="hero">
-      <div class="hero__image">
+      <figure class="hero__image">
         <Image
           src={logo}
           alt="Foto SMK tercintah"
@@ -113,17 +113,37 @@ const beritaArr = await request.json();
           format="webp"
           loading="eager"
         />
-      </div>
-      <div class="hero__text">
+      </figure>
+
+      <figcaption class="hero__text">
         <h1>SMK Metland</h1>
         <p>
           Gua mau buat ulang <a href="https://smkmetland.net">smkmetland.net</a
-          >. Jelek banget soalnya...
+          >. Jelek banget soalnya... Lorem ipsum, dolor sit amet consectetur
+          adipisicing elit. Harum delectus, error, molestiae obcaecati dolorem
+          numquam excepturi incidunt totam nostrum ipsa minus quaerat hic, quod
+          ratione accusamus esse consequatur eaque ipsam.
         </p>
+
+        <a href="/ppdb" class="btn btn--cta">Daftar sekarang</a>
+      </figcaption>
+    </section>
+
+    <section class="main-section" id="tentang">
+      <div class="main-section__content">
+        <h2>Kenapa SMK Metland?</h2>
         <p>
-          Situs ini masih dalam tahap pengembangan, jadi jangan ngomong
-          aneh-aneh dulu yah
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Et aliquid
+          quis molestias obcaecati corporis unde nobis repellat exercitationem
+          recusandae minima doloribus, sed rem modi eveniet repellendus nihil
+          temporibus maxime quibusdam. Lorem ipsum dolor sit amet consectetur
+          adipisicing elit. Natus nisi optio illo debitis. Unde eveniet vero
+          temporibus autem minus minima illo! Animi quibusdam doloribus
+          voluptatum suscipit eligendi asperiores cupiditate dolorem?
         </p>
+
+        <a href="/ppdb" class="btn btn--cta">Daftar sekarang</a>
+        <a href="/tentang-sekolah" class="btn">Pelajari selengkapnya</a>
       </div>
     </section>
 
@@ -190,7 +210,7 @@ const beritaArr = await request.json();
               ))
             }
           </ul>
-          <a href="/berita-sekolah">Lihat lebih banyak</a>
+          <a href="/berita-sekolah" class="btn">Lihat lebih banyak</a>
         </div>
       </div>
     </section>
@@ -237,6 +257,7 @@ const beritaArr = await request.json();
     transform: translateZ(-10px) scale(2);
     width: 100vw;
     height: 100vh;
+    margin: 0;
 
     img {
       width: 100%;
