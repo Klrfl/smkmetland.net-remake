@@ -1,5 +1,6 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
+import { Image } from "astro:assets";
 import type { InferEntrySchema } from "astro:content";
 
 type Props = InferEntrySchema<"program-keahlian">;
@@ -8,14 +9,47 @@ const frontmatter = Astro.props;
 ---
 
 <MainLayout title={frontmatter.title} description={frontmatter.title}>
-  <article class="artikel-utama artikel-utama--program-keahlian">
-    <h1>{frontmatter.title}</h1>
+  <article class="artikel-program-keahlian">
+    <header>
+      <h1>{frontmatter.title}</h1>
+      {
+        frontmatter.image?.url && (
+          <Image
+            class="header-image"
+            src={frontmatter.image.url}
+            alt={frontmatter.image.alt}
+            width="300"
+            height="200"
+          />
+        )
+      }
+    </header>
     <slot />
   </article>
 </MainLayout>
 
-<style>
+<style is:global lang="scss">
   h1 {
     font-size: 3.5rem;
+  }
+
+  .artikel-program-keahlian {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 2rem;
+
+    .header-image {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+
+    & > * {
+      grid-column: 1/-1;
+    }
+
+    .col {
+      grid-column: span 3;
+    }
   }
 </style>

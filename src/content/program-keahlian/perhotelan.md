@@ -6,5 +6,4 @@ image:
   alt: Perhotelan
 ---
 
-Ga tau jg
-Bukan anak perhotelan soalnya
+Berdasarkan INPRES REVITALISASI SMK sebagai perekat stakeholder dan Peraturan Pemerintah No. 48 tahun 2008 Pendanaan Pendidikan dan No 17 Tentang Pengelolaan serta Penyelenggaraan Pendidiikan dan perubahannya, disebutkan bahwa SMK Metland adalah Badan Layanan Umum Daerah (BLUD) Kementerian Pendidikan dan Kebudayaan pada bidang pengembangan dan pelatihan SMK yang berada dibawah tanggung jawab Direktorat Jenderal GTK. SMK Metland memiliki tugas melaksanakan pengembangan karakter dan mutu pendidikan masyarakat salah satunya dengan Program Pendidikan Perhotelan yang bertujuan melatih langsung tentang tanggung jawab praktek bidang Perhotelan secara profesional.
