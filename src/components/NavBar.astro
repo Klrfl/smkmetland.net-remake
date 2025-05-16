@@ -79,7 +79,7 @@ const kurikulum = await getCollection("kurikulum");
           {
             programKeahlian.map((program) => (
               <li>
-                <a href={`/program-keahlian/${program.slug}`}>
+                <a href={`/program-keahlian/${program.id}`}>
                   {program.data.title}
                 </a>
               </li>
