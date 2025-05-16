@@ -16,6 +16,6 @@ const { program } = Astro.props;
 const { Content } = await render(program);
 ---
 
-<ProgramKeahlian frontmatter={program.data}>
+<ProgramKeahlian {...program.data}>
   <Content />
 </ProgramKeahlian>

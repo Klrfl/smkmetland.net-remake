@@ -1,12 +1,21 @@
 ---
 import MainLayout from "@/layouts/MainLayout.astro";
+import type { InferEntrySchema } from "astro:content";
 
-const { frontmatter } = Astro.props;
+type Props = InferEntrySchema<"program-keahlian">;
+
+const frontmatter = Astro.props;
 ---
 
-<MainLayout title={frontmatter.title} description={frontmatter.description}>
+<MainLayout title={frontmatter.title} description={frontmatter.title}>
   <article class="artikel-utama artikel-utama--program-keahlian">
     <h1>{frontmatter.title}</h1>
     <slot />
   </article>
 </MainLayout>
+
+<style>
+  h1 {
+    font-size: 3.5rem;
+  }
+</style>
