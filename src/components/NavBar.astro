@@ -67,7 +67,19 @@ const kurikulum = await getCollection("kurikulum");
       </button>
     </div>
     <ul>
-      <li><a href="/tentang-sekolah">Tentang sekolah</a></li>
+      <li>
+        <button>
+          <span>Sejarah sekolah</span>
+          <Icon name="mdi:menu-down" />
+        </button>
+
+        <ul class="main-nav__sub-menu">
+          <li>
+            <a href="/tentang-sekolah">Visi misi</a>
+            <a href="/tentang-sekolah/sejarah">Sejarah</a>
+          </li>
+        </ul>
+      </li>
 
       <li>
         <button>
@@ -281,7 +293,7 @@ const kurikulum = await getCollection("kurikulum");
         top: 0;
         width: max-content;
         transform: translateY(3rem);
-        opacity: 0;
+        min-width: 100%;
 
         &:hover {
           max-height: 25rem;

@@ -1,0 +1,177 @@
+---
+import MainLayout from "@/layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+
+interface SejarahItem {
+  image: {
+    url: string;
+    alt?: string;
+  };
+  caption: string;
+  year: number;
+}
+
+const sejarahItems: SejarahItem[] = [
+  {
+    caption:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores praesentium consectetur odio inventore placeat nam cumque corporis! Quasi facilis dolore aliquam voluptate officia voluptates, provident odio non sequi, itaque quam.",
+    year: 2014,
+    image: {
+      url: "https://picsum.photos/200/100",
+    },
+  },
+  {
+    caption:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium accusantium quas rem voluptates consequatur voluptatem necessitatibus cum iure quos ea modi hic maiores neque accusamus, incidunt consequuntur iusto dignissimos. Eius.",
+    year: 2015,
+    image: {
+      url: "https://picsum.photos/200/100",
+    },
+  },
+  {
+    caption:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium accusantium quas rem voluptates consequatur voluptatem necessitatibus cum iure quos ea modi hic maiores neque accusamus, incidunt consequuntur iusto dignissimos. Eius.",
+    year: 2016,
+    image: {
+      url: "https://picsum.photos/200/100",
+    },
+  },
+  {
+    caption:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium accusantium quas rem voluptates consequatur voluptatem necessitatibus cum iure quos ea modi hic maiores neque accusamus, incidunt consequuntur iusto dignissimos. Eius.",
+    year: 2017,
+    image: {
+      url: "https://picsum.photos/200/100",
+    },
+  },
+];
+---
+
+<MainLayout>
+  <h1>Sejarah</h1>
+
+  <div class="grid">
+    {
+      sejarahItems.map((s) => (
+        <figure class="grid__item">
+          <Image
+            src={s.image.url}
+            width="160"
+            height="90"
+            alt={s.image.alt ?? ""}
+            class="grid__item-image"
+          />
+
+          <hr class="grid__item-line" />
+
+          <figcaption class="grid__item-caption">
+            <p class="grid__item-year">{s.year}</p>
+            <p>{s.caption}</p>
+          </figcaption>
+        </figure>
+      ))
+    }
+  </div>
+</MainLayout>
+
+<style lang="scss">
+  .grid {
+    --left-size: 1fr;
+    --line-size: 5rem;
+    --right-size: 1fr;
+    display: grid;
+    grid-template-columns:
+      [left-start] var(--left-size) [left-end line-start] var(--line-size)
+      [line-end right-start] var(--right-size) [right-end];
+
+    @media (max-width: 50em) {
+      --left-size: 4rem;
+      --line-size: 1fr;
+    }
+
+    &__item {
+      display: grid;
+      grid-template-columns: subgrid;
+      grid-column: left / right;
+      grid-auto-flow: dense;
+
+      &-image {
+        grid-column: left;
+        border-radius: 1rem;
+
+        @media (max-width: 50em) {
+          grid-column: line / right;
+        }
+
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      &-line {
+        @media (min-width: 50em) {
+          grid-column: line;
+        }
+
+        grid-row: 1/3;
+        margin-block: 0;
+      }
+
+      &-year {
+        font-weight: bold;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          width: 2rem;
+          height: 2rem;
+          aspect-ratio: 1/1;
+          border-radius: 100%;
+          background: white;
+          translate: -3.5rem 0;
+
+          @media (max-width: 50rem) {
+            translate: -3rem 0;
+          }
+        }
+      }
+
+      &-caption {
+        padding-block: 2rem;
+        grid-column: right;
+
+        @media (max-width: 50em) {
+          grid-column: line / right;
+        }
+      }
+    }
+
+    @media (min-width: 50em) {
+      &__item:nth-child(even) {
+        --left-size: 1fr;
+        --line-size: 4rem;
+
+        & .grid__item-image {
+          grid-column: right;
+        }
+
+        & .grid__item-caption {
+          grid-column: left;
+        }
+
+        & .grid__item-year {
+          text-align: right;
+        }
+
+        & .grid__item-year::before {
+          left: auto;
+          translate: 3.5rem 0;
+        }
+      }
+    }
+  }
+</style>
